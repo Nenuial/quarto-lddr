@@ -1,0 +1,13 @@
+---
+title: 'Presentation title'
+subtitle: 'Presentation subtitle'
+pagetitle: 'Page title'
+author: Pascal Burkhard
+execute:
+  echo: true
+  error: true
+  warning: true
+format: lddr_keynote-revealjs
+---
+
+# Example
