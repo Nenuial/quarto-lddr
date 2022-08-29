@@ -1,0 +1,30 @@
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+$tightlist.tex()$
+$tables.tex()$
+$graphics.tex()$
+$citations.tex()$
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\usepackage{fancyhdr}
+\fancyhf{} % clear all header and footer fields
+
+\fancyhead[L]{\includegraphics[width=$logowidth$]{$logo$}}
+\fancyhead[C]{$doc-title$}
+\fancyhead[R]{$doc-class$}
+\fancyfoot[L]{$sign$/\the\year}
+\fancyfoot[C]{$subtitle$}
+\fancyfoot[R]{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\pagestyle{fancy}
+
+$if(line-numbers)$
+% Package for linenumbers, with options to switch the page side
+\usepackage[switch,modulo]{lineno}
+$endif$

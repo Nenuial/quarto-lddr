@@ -1,0 +1,46 @@
+title: LDDR default document
+author: Pascal Burkhard
+version: 1.0.0
+contributes:
+  format:
+    pdf:
+      template-partials:
+        - title.tex
+        - pandoc.tex
+        - before-body.tex
+        - after-body.tex
+      include-in-header: 
+        - header-setup.tex
+      logo: logo_LDDR.pdf
+      logowidth: 2cm
+      papersize: a4
+      colorlinks: false
+      lang: fr-CH
+      geometry:
+        - bindingoffset=0in
+        - headheight=35pt
+        - left=1.5cm
+        - right=1.5cm
+        - top=2.5cm
+        - bottom=2cm
+        - headsep=.5cm
+        - footskip=1cm
+      mainfont: FiraSans
+      mainfontoptions:
+        - Extension = .otf
+        - UprightFont = *-Light
+        - ItalicFont = *-LightItalic
+        - BoldFont = *-Regular
+        - BoldItalicFont = *-Italic
+      sansfont: FiraSans
+      sansfontoptions:
+        - Extension = .otf
+        - UprightFont = *-Light
+        - ItalicFont = *-LightItalic
+        - BoldFont = *-Regular
+        - BoldItalicFont = *-Italic
+      mathfont: FiraMath-Light
+      mathfontoptions:
+        - Path = /Library/Fonts/
+        - Extension = .otf
+      

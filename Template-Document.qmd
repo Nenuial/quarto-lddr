@@ -1,0 +1,20 @@
+---
+title: 'Document title'
+subtitle: 'Document subtitle'
+line-numbers: true
+author: Pascal Burkhard
+sign: PBd
+format: lddr_doc-pdf
+---
+
+# First header
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nunc libero, posuere vel urna ac, maximus porttitor metus. Sed bibendum nec lectus ac feugiat. Ut et lacinia eros, eu bibendum tellus. Aenean et faucibus lacus. Morbi a maximus orci. Vivamus lobortis, nisl id posuere euismod, lacus lorem pulvinar orci, at malesuada sapien nunc vel eros. Duis in sem lorem. Curabitur mollis eget dui at laoreet. Donec dignissim libero ac purus semper, eget condimentum magna venenatis. Integer mollis ipsum in eros finibus, ut iaculis tortor euismod. Sed diam arcu, fermentum ac maximus at, luctus a quam.
+
+Vestibulum scelerisque metus non turpis fringilla, ut eleifend ex consectetur. Nullam iaculis, enim ut efficitur pulvinar, risus lacus aliquam sem, sit amet consectetur eros mauris sed metus. Morbi et commodo neque. Nulla in sapien vitae sapien dictum consequat. Vestibulum placerat nisi et lacus fermentum laoreet. Fusce sagittis nec urna porttitor lobortis. Suspendisse at orci augue.
+
+Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus ac elit quis urna tristique dignissim sed vel velit. Fusce rutrum turpis dui, at tempor velit imperdiet nec. In lobortis elit a justo sagittis, nec laoreet sapien aliquam. Ut euismod ullamcorper tortor, nec maximus augue vestibulum auctor. Duis massa elit, accumsan nec sem in, semper imperdiet dui. Fusce vestibulum tincidunt sapien vel dictum. Sed volutpat mattis metus nec lobortis. Vestibulum odio leo, semper et metus pretium, convallis viverra purus. Phasellus facilisis quam id leo sodales, venenatis mattis dui bibendum. Suspendisse eu mauris nec lacus semper fringilla ut non felis. Cras dapibus nulla id placerat vestibulum. Mauris at erat at nulla mattis molestie. Nullam ac dui libero. Praesent et ligula fringilla, rutrum ante vitae, fringilla ligula.
+
+Nunc et sagittis nulla. Ut vitae malesuada ipsum. Vivamus hendrerit augue id nibh scelerisque, sed tincidunt lectus elementum. Phasellus nisi eros, dignissim ut dui ac, sollicitudin imperdiet eros. Morbi justo nibh, commodo ut hendrerit sit amet, blandit quis elit. Fusce rutrum orci sed lorem accumsan tempor. Quisque fermentum leo ut massa mattis, mattis semper massa scelerisque. Ut eu sem non arcu facilisis auctor eget id turpis. Etiam sagittis, sapien eget pharetra accumsan, justo metus facilisis lectus, non varius diam ligula non dui.
+
+Etiam eu enim augue. Sed in diam a dolor fringilla ullamcorper a eget tortor. Vestibulum lacinia condimentum pharetra. Ut vel turpis ac ligula cursus sollicitudin. Aenean luctus ut ipsum quis malesuada. Nulla eu ex erat. Morbi eget accumsan velit. Pellentesque ligula risus, sodales ut commodo a, rutrum in leo. Donec id purus ac nisi luctus viverra.
