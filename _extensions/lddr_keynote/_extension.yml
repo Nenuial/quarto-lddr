@@ -6,7 +6,5 @@ contributes:
     revealjs:
       slide-number: c
       highlight-style: github
-      width: 1600 
-      height: 900
-      theme: style.scss
+      theme: [style.scss]
       logo: lddr-hex-nb.png
