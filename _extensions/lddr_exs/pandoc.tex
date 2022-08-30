@@ -1,0 +1,22 @@
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+$tightlist.tex()$
+$tables.tex()$
+$graphics.tex()$
+$citations.tex()$
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\header{\includegraphics[width=$logowidth$]{$logo$}}{$doc-title$}{$doc-class$}
+\headrule
+\footer{$sign$/\the\year}{}{\thepage/\pageref{LastPage}}
+\footrule
+
+$if(line-numbers)$
+% Package for linenumbers, with options to switch the page side
+\usepackage[switch,modulo]{lineno}
+$endif$

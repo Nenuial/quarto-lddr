@@ -1,0 +1,12 @@
+---
+title: 'Document title'
+subtitle: 'Document subtitle'
+line-numbers: true
+author: Pascal Burkhard
+sign: PBd
+format: lddr_exs-pdf
+---
+
+# First header
+
+\question Lorem ipsum

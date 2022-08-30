@@ -1,9 +1,10 @@
-title: LDDR default document
+title: LDDR exercise document
 author: Pascal Burkhard
-version: 1.0.2
+version: 1.0.0
 contributes:
   format:
     pdf:
+      documentclass: exam
       template-partials:
         - title.tex
         - pandoc.tex
