@@ -11,10 +11,15 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+% Setup header and footer
 \header{\includegraphics[width=$logowidth$]{$logo$}}{$doc-title$}{$doc-class$}
 \headrule
 \footer{$sign$/\the\year}{}{\thepage/\pageref{LastPage}}
 \footrule
+
+% Prevent orphan/widow questions
+\BeforeBeginEnvironment{solutionorlines}{\par\nopagebreak\minipage{\linewidth}}
+\AfterEndEnvironment{solutionorlines}{\endminipage}
 
 $if(line-numbers)$
 % Package for linenumbers, with options to switch the page side
