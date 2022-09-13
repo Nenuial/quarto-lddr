@@ -1,6 +1,6 @@
 title: LDDR default document
 author: Pascal Burkhard
-version: 1.0.2
+version: 1.0.3
 contributes:
   format:
     pdf:
@@ -16,6 +16,7 @@ contributes:
       papersize: a4
       colorlinks: false
       lang: fr-CH
+      classoption: [french]
       geometry:
         - bindingoffset=0in
         - headheight=35pt
