@@ -1,12 +1,20 @@
 return {
   ["doc-source"] = function(args, kwargs, meta)
-    local calloutDiv = pandoc.Div({})
-    calloutDiv.attr.classes:insert("callout-note")
-    calloutDiv.content:insert(pandoc.Header(2, "Test"))
-    calloutDiv.content:insert("Abc")
-    
-    -- return calloutDiv
-    return nil
+    if quarto.doc.isFormat("pdf") then
+      local authorName = pandoc.utils.stringify(meta["authors"][1]["name"]["literal"])
+      local sourceDate = pandoc.RawInline('latex', '\\DTMdate{' .. pandoc.utils.stringify(meta["date"]) .. '}')
+      local sourceName = pandoc.utils.stringify(meta["affiliations"][1]["name"])
+      local sourceUrl = pandoc.utils.stringify(meta["affiliations"][1]["url"])
+      
+      local calloutDiv = pandoc.Div({})
+      calloutDiv.attr.classes:insert("callout-note")
+      calloutDiv.attr.attributes["icon"] = "false"
+      calloutDiv.content:insert(pandoc.Header(2, "Article de presse"))
+      calloutDiv.content:insert(pandoc.Inlines{"Cet article de ", pandoc.Emph(authorName), " a été publié le ", sourceDate, " par ", pandoc.Emph(pandoc.Link(sourceName, sourceUrl)), "."})
+      
+      -- return calloutDiv
+      return calloutDiv
+    end
   end,
   
   ["download-pdf"] = function()
