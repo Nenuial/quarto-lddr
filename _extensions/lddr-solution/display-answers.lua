@@ -2,6 +2,14 @@ local solutionStatus = false
 local questionNumber = 0
 
 local function readStatus(meta)
+  if quarto.doc.isFormat("latex") then
+    meta['commands'] = {}
+    meta['environments'] = {}
+    
+    meta['commands']['q'] = 'question'
+    meta['environments']['answer'] = 'solutionorlines'
+  end
+  
   if meta['solutions'] then
     solutionStatus = true
     
@@ -11,6 +19,8 @@ local function readStatus(meta)
     
     return meta
   end
+  
+  return meta
 end
 
 local function writeSolutions(divEl)
