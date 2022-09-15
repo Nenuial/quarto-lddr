@@ -5,6 +5,7 @@ contributes:
   format:
     pdf:
       documentclass: exam
+      classoption: [french]
       template-partials:
         - title.tex
         - pandoc.tex

@@ -1,0 +1,6 @@
+title: Display answers
+author: Pascal Burkhard
+version: 1.0.0
+contributes:
+  filters:
+    - display-answers.lua
