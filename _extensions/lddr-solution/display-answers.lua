@@ -51,6 +51,8 @@ local function writeQuestions(paraEl)
   
     if firstEl.attr.classes:includes('q') then
       questionNumber = questionNumber + 1
+      local questionContent = paraEl
+      questionContent.content:remove(1,2)
       return pandoc.OrderedList(paraEl, pandoc.ListAttributes(questionNumber))
     end
   end
