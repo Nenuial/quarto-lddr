@@ -1,6 +1,6 @@
 title: LDDR default document
 author: Pascal Burkhard
-version: 1.0.3
+version: 1.0.4
 contributes:
   format:
     pdf:
