@@ -2,7 +2,7 @@ return {
   ["doc-source"] = function(args, kwargs, meta)
     if quarto.doc.isFormat("pdf") then
       local authorName = pandoc.utils.stringify(meta["authors"][1]["name"]["literal"])
-      local sourceDate = pandoc.RawInline('latex', '\\DTMdate{' .. pandoc.utils.stringify(meta["date"]) .. '}')
+      local sourceDate = pandoc.utils.stringify(meta["date"])
       local sourceName = pandoc.utils.stringify(meta["affiliations"][1]["name"])
       local sourceUrl = pandoc.utils.stringify(meta["affiliations"][1]["url"])
       

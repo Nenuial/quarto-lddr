@@ -1,6 +1,6 @@
 title: LDDR Shortcodes
 author: Pascal Burkhard
-version: 1.0.2
+version: 1.0.3
 contributes:
   shortcodes:
     - shortcodes.lua
