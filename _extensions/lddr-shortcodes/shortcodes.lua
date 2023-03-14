@@ -6,14 +6,14 @@ return {
       local sourceName = pandoc.utils.stringify(meta["authors"][1]["affiliation"]["name"])
       local sourceUrl = pandoc.utils.stringify(meta["authors"][1]["affiliation"]["url"])
       
-      local calloutHeader = pandoc.Header(2, "Article de presse")
       local calloutContent = pandoc.Inlines{"Cet article de ", pandoc.Emph(authorName), 
         " a été publié le ", sourceDate, " par ", 
         pandoc.Emph(pandoc.Link(sourceName, sourceUrl)), "."}
       
       local calloutDiv = {}
       calloutDiv["type"] = "note"
-      calloutDiv["content"] = pandoc.Blocks{calloutHeader, calloutContent}
+      calloutDiv["caption"] = "Article de presse"
+      calloutDiv["content"] = pandoc.Blocks{calloutContent}
       
       calloutOut = quarto.Callout(calloutDiv)
       
