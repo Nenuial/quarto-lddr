@@ -1,6 +1,6 @@
-title: LDDR exercise document
-author: Pascal Burkhard
-version: 1.0.0
+title: "LDDR exercise document"
+author: "Pascal Burkhard"
+version: 1.0.1
 contributes:
   format:
     pdf:
