@@ -1,5 +1,5 @@
 return {
-  ["doc-source"] = function(args, kwargs, meta)
+  ["doc-press"] = function(args, kwargs, meta)
     if quarto.doc.isFormat("pdf") then
       local authorName = pandoc.utils.stringify(meta["authors"][1]["name"])
       local sourceDate = pandoc.utils.stringify(meta["date"])
@@ -12,7 +12,27 @@ return {
       
       local calloutDiv = {}
       calloutDiv["type"] = "note"
+      calloutDiv["icon"] = false
       calloutDiv["caption"] = "Article de presse"
+      calloutDiv["content"] = pandoc.Blocks{calloutContent}
+      
+      calloutOut = quarto.Callout(calloutDiv)
+      
+      return calloutOut
+    end
+  end,
+  
+  ["doc-book"] = function(args, kwargs, meta)
+    if quarto.doc.isFormat("pdf") then
+      local documentTitle = pandoc.utils.stringify(meta["title"])
+      local authorName = pandoc.utils.stringify(meta["authors"][1]["name"])
+
+      local calloutContent = pandoc.Inlines{"Ce chapitre est un extrait de ", pandoc.Emph(documentTitle), " écrit par ", pandoc.Emph(authorName), "."}
+      
+      local calloutDiv = {}
+      calloutDiv["type"] = "note"
+      calloutDiv["icon"] = false
+      calloutDiv["caption"] = "Extrait d'ouvrage"
       calloutDiv["content"] = pandoc.Blocks{calloutContent}
       
       calloutOut = quarto.Callout(calloutDiv)
