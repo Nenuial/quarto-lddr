@@ -13,7 +13,7 @@ return {
       local calloutDiv = {}
       calloutDiv["type"] = "note"
       calloutDiv["icon"] = false
-      calloutDiv["caption"] = "Article de presse"
+      calloutDiv["title"] = "Article de presse"
       calloutDiv["content"] = pandoc.Blocks{calloutContent}
       
       calloutOut = quarto.Callout(calloutDiv)
@@ -32,7 +32,7 @@ return {
       local calloutDiv = {}
       calloutDiv["type"] = "note"
       calloutDiv["icon"] = false
-      calloutDiv["caption"] = "Extrait d'ouvrage"
+      calloutDiv["title"] = "Extrait d'ouvrage"
       calloutDiv["content"] = pandoc.Blocks{calloutContent}
       
       calloutOut = quarto.Callout(calloutDiv)
