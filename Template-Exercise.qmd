@@ -1,12 +1,29 @@
 ---
-title: 'Document title'
-subtitle: 'Document subtitle'
-line-numbers: true
-author: Pascal Burkhard
-sign: PBd
-format: lddr_exs-pdf
+title: "Document avec questions"
+subtitle: "et réponses"
+solutions: false
+filters:
+  - lddr-solution
+  - quarto
+  - latex-environment
+format:
+  html: default
+  lddr-exs-pdf: 
+    keep-tex: true
 ---
+	
+[]{.q} Question 1
 
-# First header
+::: {.answer options='6cm'}
 
-\question Lorem ipsum
+Réponse 1 avec des lignes
+
+:::
+
+[]{.q} Question 2
+
+::: {.code options='6cm'}
+
+Réponse 2 avec une boite
+
+:::
