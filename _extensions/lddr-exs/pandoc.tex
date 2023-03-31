@@ -23,6 +23,9 @@ $endfor$
 % Remove examedoc solution header
 \renewcommand{\solutiontitle}{}
 
+% Environment that does nothing
+\newenvironment{emptyenv}{}{}
+
 % Prevent orphan/widow questions
 \BeforeBeginEnvironment{solutionorlines}{\par\nopagebreak\minipage{\linewidth}}
 \AfterEndEnvironment{solutionorlines}{\endminipage}
