@@ -8,6 +8,7 @@ local function readStatus(meta)
     
     meta['commands']['q'] = 'question'
     meta['environments']['answer'] = 'solutionorlines'
+    meta['environments']['code'] = 'solutionorbox'
   end
   
   if meta['solutions'] then
