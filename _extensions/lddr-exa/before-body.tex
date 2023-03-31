@@ -1,0 +1,17 @@
+$if(title)$
+\begin{center}
+\textsc{\textbf{\Huge $title$}} \\
+$if(subtitle)$\textbf{\large $subtitle$}$endif$
+\end{center}
+$endif$
+
+\uline{Note:   \hfill \hfill        Points:\mbox{\hspace{1.2cm}} /\pointsinrange{mytest}}
+
+$if(line-numbers)$
+\begin{linenumbers}
+$endif$
+
+\vspace{.8cm}
+
+\begin{questions}
+\begingradingrange{mytest}
