@@ -1,11 +1,10 @@
 title: "LDDR exam document"
 author: "Pascal Burkhard"
-version: 1.0.2
+version: 1.0.3
 contributes:
   format:
     pdf:
       documentclass: exam
-      classoption: [french]
       template-partials:
         - title.tex
         - pandoc.tex
