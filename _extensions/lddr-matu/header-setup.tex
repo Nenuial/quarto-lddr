@@ -65,6 +65,16 @@ linewidth=1pt]{tBox}
 \newcounter{myquestion}
 \setcounter{myquestion}{1}
 
+% For complex environment
+\usepackage{environ}
+
+\NewEnviron{exacomplex}[1][0]{%
+  \toks0=\expandafter{\BODY}%
+  \toks2={\textbf{#1 points} & \themyquestion\stepcounter{myquestion}. &}%
+  \xdef\TableRowContents{\the\toks2 \the\toks0 \\[.2cm]}%
+  \aftergroup\TableRowContents
+}
+
 \newcommand{\exatitle}[1]{&\multicolumn{2}{X}{\large\textbf{#1}\normalsize}\\}
 
 \newcommand{\exaquestion}[2][0]{\textbf{#1 points} & \themyquestion\stepcounter{myquestion}. & #2\vspace{.2cm}\\}
