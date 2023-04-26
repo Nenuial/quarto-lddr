@@ -1,0 +1,36 @@
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+$tightlist.tex()$
+$tables.tex()$
+$graphics.tex()$
+$citations.tex()$
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+% Setup page styles
+\pagestyle{head}
+\header{\includegraphics[height=1.8cm]{$logo$}}{}{\raisebox{.5cm}{\Ovalbox{\parbox{5cm}{\fontspec{Sansation}\centering Examens de maturité\\ Session $session$}}}}
+\runningheader{}{}{Nom, Prénom: \uline{\hspace{6cm}}}
+\footer{}{\thepage}{}
+
+% Simple solution environment (no box)
+\unframedsolutions
+
+% Environment that does nothing
+\newenvironment{emptyenv}{}{}
+
+% Remove examedoc solution header
+\renewcommand{\solutiontitle}{}
+
+% Prevent orphan/widow questions
+\BeforeBeginEnvironment{solutionorlines}{\par\nopagebreak\minipage{\linewidth}}
+\AfterEndEnvironment{solutionorlines}{\endminipage}
+
+$if(line-numbers)$
+% Package for linenumbers, with options to switch the page side
+\usepackage[switch,modulo]{lineno}
+$endif$

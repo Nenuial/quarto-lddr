@@ -1,0 +1,16 @@
+---
+session: 2023
+format:
+  lddr-matu-pdf:
+    keep-tex: true
+---
+
+# First header {.section}
+
+:::questiontable
+
+[Première question]{.exaquestion options="6"}
+[Deuxième question]{.exaquestion options="4"}
+[10]{.exatotal}
+
+:::
