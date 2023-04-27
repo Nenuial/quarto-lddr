@@ -7,10 +7,39 @@ format:
 
 # First header {.section}
 
-:::questiontable
+::::questiontable
 
 [Première question]{.exaquestion options="6"}
 [Deuxième question]{.exaquestion options="4"}
-[10]{.exatotal}
+
+:::{.exacomplex options="3"}
+Troisième question avec liste :
+
+* Item 1
+* Item 2
 
 :::
+
+[10]{.exatotal}
+
+::::
+
+{{< pagebreak >}}
+
+# DOCUMENT 1
+
+::::press
+
+:::center
+**Titre article de presse**
+:::
+
+\normalsize
+
+:::right
+*Journal*, date
+:::
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin maximus turpis id neque pharetra, ut vehicula augue sagittis.
+
+::::

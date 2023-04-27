@@ -4,6 +4,9 @@
 % Avoid large space to equalise content
 \raggedbottom
 
+% Allow for FlushRight command
+\usepackage{ragged2e}
+
 % Package for \uline{}
 \usepackage[normalem]{ulem}
 
@@ -52,6 +55,22 @@ innerbottommargin=15pt,
 leftmargin=0cm,
 rightmargin=0cm,
 linewidth=1pt]{tBox}
+
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=true,
+leftline=true,
+topline=true,
+bottomline=true,
+linecolor=black,
+backgroundcolor=black!5,
+innerleftmargin=6pt,
+innerrightmargin=6pt,
+innertopmargin=12pt,
+innerbottommargin=6pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=.3pt]{pressBox}
 
 % The question table environement and all its commands
 \newenvironment{questiontable}
