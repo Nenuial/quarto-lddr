@@ -1,6 +1,6 @@
 title: "LDDR maturity exam"
 author: "Pascal Burkhard"
-version: 1.0.3
+version: 1.0.4
 contributes:
   format:
     pdf:
@@ -23,6 +23,7 @@ contributes:
         right: FlushRight
         press: pressBox
       commands:
+        pagestyle: pagestyle
         exatitle: exatitle
         exaquestion: exaquestion
         exatotal: exatotal
