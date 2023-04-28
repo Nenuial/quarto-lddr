@@ -1,5 +1,9 @@
 ---
 session: 2023
+nom: "Dupont"
+prenom: "Charles"
+classe: "3mg01"
+groupe: "OC111"
 format:
   lddr-matu-pdf:
     keep-tex: true

@@ -8,10 +8,10 @@
 \vspace{7cm}
 
 \renewcommand\ULthickness{1pt}\setlength\ULdepth{.5ex}\Large\bfseries
-Nom:\tabto{3cm} \uline{\hfill}\\[.5cm]
-Prénom:\tabto{3cm} \uline{\hfill}\\[.5cm]
-Classe:\tabto{3cm} \uline{\hfill}\\[.5cm]
-Groupe:\tabto{3cm} \uline{\hfill}\\[.5cm]
+Nom:\tabto{3cm}    $if(nom)$$nom$$else$\uline{\hfill}$endif$\\[.5cm]
+Prénom:\tabto{3cm} $if(prenom)$$prenom$$else$\uline{\hfill}$endif$\\[.5cm]
+Classe:\tabto{3cm} $if(classe)$$classe$$else$\uline{\hfill}$endif$\\[.5cm]
+Groupe:\tabto{3cm} $if(groupe)$$groupe$$else$\uline{\hfill}$endif$\\[.5cm]
 
 \renewcommand\ULthickness{.5pt}\setlength\ULdepth{.3ex}\normalfont
 
