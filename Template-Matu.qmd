@@ -4,9 +4,7 @@ nom: "Dupont"
 prenom: "Charles"
 classe: "3mg01"
 groupe: "OC111"
-format:
-  lddr-matu-pdf:
-    keep-tex: true
+format: lddr-matu-pdf
 ---
 
 # First header {.section}
