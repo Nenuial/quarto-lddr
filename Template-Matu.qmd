@@ -22,7 +22,9 @@ Troisième question avec liste :
 
 :::
 
-[10]{.exatotal}
+[Quatrième question]{.exaquestion options="1"}
+
+[11]{.exatotal}
 
 ::::
 

@@ -87,18 +87,21 @@ linewidth=.3pt]{pressBox}
 % For complex environment
 \usepackage{environ}
 
+% For tests
+\usepackage{ifthen}
+
 \NewEnviron{exacomplex}[1][0]{%
   \toks0=\expandafter{\BODY}%
-  \toks2={\textbf{#1 points} & \themyquestion\stepcounter{myquestion}. &}%
+  \toks2={\textbf{#1 \ifthenelse{#1=1}{point}{points}} & \themyquestion\stepcounter{myquestion}. &}%
   \xdef\TableRowContents{\the\toks2 \the\toks0 \\[.2cm]}%
   \aftergroup\TableRowContents
 }
 
 \newcommand{\exatitle}[1]{&\multicolumn{2}{X}{\large\textbf{#1}\normalsize}\\}
 
-\newcommand{\exaquestion}[2][0]{\textbf{#1 points} & \themyquestion\stepcounter{myquestion}. & #2\vspace{.2cm}\\}
+\newcommand{\exaquestion}[2][0]{\textbf{#1 \ifthenelse{#1=1}{point}{points}} & \themyquestion\stepcounter{myquestion}. & #2\vspace{.2cm}\\}
 
-\newcommand{\exatotal}[1]{\textbf{Total~:\newline #1 points} & ~ & ~\\}
+\newcommand{\exatotal}[1]{\textbf{Total~:\newline #1 \ifthenelse{#1=1}{point}{points}} & ~ & ~\\}
 
 \newcommand{\exadoc}[1]{\emph{DOCUMENT #1}}
 
