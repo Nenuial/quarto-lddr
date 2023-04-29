@@ -1,0 +1,43 @@
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+$tightlist.tex()$
+$tables.tex()$
+$graphics.tex()$
+$citations.tex()$
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+% Simple solution environment (no box)
+\unframedsolutions
+
+% Environment that does nothing
+\newenvironment{emptyenv}{}{}
+
+% Remove examedoc solution header
+\renewcommand{\solutiontitle}{}
+
+% Prevent orphan/widow questions
+\BeforeBeginEnvironment{solutionorlines}{\par\nopagebreak\minipage{\linewidth}}
+\AfterEndEnvironment{solutionorlines}{\endminipage}
+
+$if(line-numbers)$
+% Package for linenumbers, with options to switch the page side
+\usepackage[switch,modulo]{lineno}
+$endif$
+
+% Define commands for heading and session infos
+\def\matuhead{%
+\setcounter{page}{1}\hspace{-1.03cm}\begin{minipage}{\linewidth}%
+\begin{tabularx}{\linewidth}{@{}p{9.5cm}X@{}}\includegraphics[width=5.5cm, valign=t]{$logo$} & \footnotesize Département fédéral de l'économie,\newline de la formation et de la recherche DEFR\newline\newline\textbf{Commission suisse de maturité CSM}\\\end{tabularx}%
+\end{minipage}\vspace{1cm}%
+}
+
+\newcommand{\matusession}[1]{%
+\begin{minipage}{\linewidth}%
+\begin{tabularx}{\linewidth}{@{}p{8.47cm}X@{}}\large\bfseries Examen suisse de maturité & \large\bfseries Session #1\\\large\bfseries OC Géographie & \\\end{tabularx}%
+\end{minipage}\vspace{.5cm}%
+}

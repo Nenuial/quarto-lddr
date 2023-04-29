@@ -1,0 +1,45 @@
+title: "Maturité fédérale"
+author: "Pascal Burkhard"
+version: 1.0.0
+contributes:
+  format:
+    pdf:
+      documentclass: exam
+      template-partials:
+        - title.tex
+        - pandoc.tex
+      include-in-header: 
+        - header-setup.tex
+      logo: logo_ch.png
+      papersize: a4
+      colorlinks: false
+      callout-icon: false
+      lang: fr-CH
+      geometry:
+        - bindingoffset=0in
+        - left=2.5cm
+        - right=2cm
+        - top=2cm
+        - bottom=2cm
+        - headsep=0cm
+        - footskip=.5cm
+      mainfont: FiraSans
+      mainfontoptions:
+        - Extension = .otf
+        - Path = /Library/Fonts/
+        - UprightFont = *-Light
+        - ItalicFont = *-LightItalic
+        - BoldFont = *-Regular
+        - BoldItalicFont = *-Italic
+      sansfont: FiraSans
+      sansfontoptions:
+        - Extension = .otf
+        - Path = /Library/Fonts/
+        - UprightFont = *-Light
+        - ItalicFont = *-LightItalic
+        - BoldFont = *-Regular
+        - BoldItalicFont = *-Italic
+      mathfont: FiraMath-Light
+      mathfontoptions:
+        - Path = /Library/Fonts/
+        - Extension = .otf

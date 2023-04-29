@@ -1,0 +1,43 @@
+% Package for total pagenumbers (used in footer)
+\usepackage{lastpage}
+
+% Avoid large space to equalise content
+\raggedbottom
+
+% For blacksquare symbol
+\usepackage{amsmath}
+
+% Allow for FlushRight command
+\usepackage{ragged2e}
+
+% Package for \uline{}
+\usepackage[normalem]{ulem}
+
+% To personalise lists
+\usepackage{enumitem}
+
+% For the Ovalbox command
+\usepackage{fancybox}
+
+% For the includegraphics `valign` key
+\usepackage[export]{adjustbox}
+
+% Packag tabularx
+\usepackage{tabularx}
+
+% Package tabto
+\usepackage{tabto}
+
+% Setup header and footer
+\pagestyle{headandfoot}
+\header{}
+{}
+{}
+\footrule
+\footer{}
+{}
+{\footnotesize \thepage}
+
+% Setup for list and paragraph spaces
+\setlength{\parskip}{.5em}
+\setlist[itemize]{leftmargin=*,label=\raisebox{.3ex}{\tiny $\blacksquare$}}
