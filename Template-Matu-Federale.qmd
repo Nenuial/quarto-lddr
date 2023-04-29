@@ -4,7 +4,10 @@ params:
 format: matu-federale-pdf
 ---
 
-```{r setup, include=FALSE}
+```{r}
+#| label: "Setup"
+#| include: false
+
 library(geovizr)
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(warning = FALSE)
