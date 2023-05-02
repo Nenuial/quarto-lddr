@@ -1,13 +1,13 @@
 return {
   ["doc-press"] = function(args, kwargs, meta)
     if quarto.doc.isFormat("pdf") then
-      local authorName = pandoc.utils.stringify(meta["authors"][1]["name"])
+      local authorName = pandoc.utils.stringify(meta["authors"][1]["name"]["literal"])
       local sourceDate = pandoc.utils.stringify(meta["date"])
-      local sourceName = pandoc.utils.stringify(meta["authors"][1]["affiliation"]["name"])
-      local sourceUrl = pandoc.utils.stringify(meta["authors"][1]["affiliation"]["url"])
+      local sourceName = pandoc.utils.stringify(meta["affiliations"][1]["name"])
+      local sourceUrl = pandoc.utils.stringify(meta["affiliations"][1]["url"])
       
       local calloutContent = pandoc.Inlines{"Cet article de ", pandoc.Emph(authorName), 
-        " a été publié le ", sourceDate, " par ", 
+        " a été publié le ", pandoc.RawInline('latex', '\\DTMdate{'.. sourceDate .. '}'), " par ", 
         pandoc.Emph(pandoc.Link(sourceName, sourceUrl)), "."}
       
       local calloutDiv = {}
@@ -25,7 +25,7 @@ return {
   ["doc-book"] = function(args, kwargs, meta)
     if quarto.doc.isFormat("pdf") then
       local documentTitle = pandoc.utils.stringify(meta["title"])
-      local authorName = pandoc.utils.stringify(meta["authors"][1]["name"])
+      local authorName = pandoc.utils.stringify(meta["authors"][1]["literal"])
 
       local calloutContent = pandoc.Inlines{"Ce chapitre est un extrait de ", pandoc.Emph(documentTitle), " écrit par ", pandoc.Emph(authorName), "."}
       
