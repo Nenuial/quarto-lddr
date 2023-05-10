@@ -3,6 +3,13 @@ author: "Pascal Burkhard"
 version: 1.0.8
 contributes:
   format:
+    html:
+      theme: 
+        dark: darkly
+        light: flatly
+      css: style.css
+      mainfont: "Fira Sans"
+      toc: true
     pdf:
       documentclass: book
       template-partials:
