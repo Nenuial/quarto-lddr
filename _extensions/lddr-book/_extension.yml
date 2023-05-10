@@ -1,12 +1,13 @@
 title: "LDDR book"
 author: "Pascal Burkhard"
-version: 1.0.4
+version: 1.0.5
 contributes:
   format:
     pdf:
       documentclass: scrreprt
       template-partials:
         - title.tex
+        - before-body.tex
       include-in-header: 
         - structure.tex
       logo: logo_LDDR.pdf
