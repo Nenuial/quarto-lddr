@@ -23,7 +23,7 @@
 \usepackage[top=3cm,bottom=3cm,left=3cm,right=3cm,headsep=10pt,a4paper]{geometry} % Page margins
 
 \usepackage{amsmath,amsfonts,amssymb,amsthm} % For math equations, theorems, symbols, etc
-\usepackage{mathabx}
+%\usepackage{mathabx}
 \let\ulcorner\relax
 \let\urcorner\relax
 \let\llcorner\relax
@@ -54,9 +54,6 @@
 \usepackage{newfloat}
 
 \usepackage{graphicx} % Required for including pictures
-\graphicspath{{pictures/}} % Specifies the directory where pictures are stored
-\DeclareGraphicsExtensions{.pdf,.png,.jpg}
-
 \usepackage{tikz} % Required for drawing custom shapes
 \usetikzlibrary{shapes.geometric}
 \usetikzlibrary{arrows.meta,arrows}
@@ -95,7 +92,7 @@
 \sisetup{exponent-product = \cdot}%
 
 \usepackage{xcolor} % Required for specifying colors by name
-\definecolor{maincolor}{HTML}{\themecolor} % Define the color used for highlighting throughout the book
+\definecolor{maincolor}{HTML}{#0F2D61} % Define the color used for highlighting throughout the book
 \definecolor{ddrblue}{RGB}{36, 32, 75} % Define the DDR Color
 
 \usepackage{pgf}
@@ -147,7 +144,7 @@
 \normalem % Italic for emphasis
 %\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
 
-\usepackage{textcomp} % Allows for direct degree symbols
+%\usepackage{textcomp} % Allows for direct degree symbols
 \usepackage{newunicodechar}
 \newunicodechar{°}{\textdegree} % Define ° as \textdegree
 
