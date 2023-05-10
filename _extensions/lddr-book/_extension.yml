@@ -1,0 +1,34 @@
+title: "LDDR book"
+author: "Pascal Burkhard"
+version: 1.0.0
+contributes:
+  format:
+    pdf:
+      documentclass: scrreprt
+      template-partials:
+        - title.tex
+      include-in-header: 
+        - structure.tex
+      logo: logo_LDDR.pdf
+      colorlinks: false
+      callout-icon: false
+      mainfont: FiraSans
+      mainfontoptions:
+        - Extension = .otf
+        - Path = /Library/Fonts/
+        - UprightFont = *-Light
+        - ItalicFont = *-LightItalic
+        - BoldFont = *-Regular
+        - BoldItalicFont = *-Italic
+      sansfont: FiraSans
+      sansfontoptions:
+        - Extension = .otf
+        - Path = /Library/Fonts/
+        - UprightFont = *-Light
+        - ItalicFont = *-LightItalic
+        - BoldFont = *-Regular
+        - BoldItalicFont = *-Italic
+      mathfont: FiraMath-Light
+      mathfontoptions:
+        - Path = /Library/Fonts/
+        - Extension = .otf
