@@ -1,6 +1,6 @@
 title: "LDDR book"
 author: "Pascal Burkhard"
-version: 1.0.5
+version: 1.0.6
 contributes:
   format:
     pdf:
@@ -10,7 +10,8 @@ contributes:
         - before-body.tex
       include-in-header: 
         - structure.tex
-      logo: logo_LDDR.pdf
+      format-resources:
+        - logoLDDR.pdf
       colorlinks: false
       callout-icon: false
       mainfont: FiraSans
