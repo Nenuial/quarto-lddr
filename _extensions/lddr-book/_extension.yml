@@ -6,7 +6,6 @@ contributes:
     html:
       theme: 
         dark: darkly
-        light: flatly
       css: style.css
       mainfont: "Fira Sans"
       toc: true
