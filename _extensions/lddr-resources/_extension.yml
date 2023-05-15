@@ -1,3 +1,6 @@
 title: "LDDR Ressources"
 author: "Pascal Burkhard"
 version: 1.0.0
+contributes:
+  formats:
+    pdf: default
