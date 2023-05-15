@@ -11,6 +11,19 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+% Font setup
+\setmainfont[Extension = .otf,Path =
+$font-path$,UprightFont = *-Light,ItalicFont =
+*-LightItalic,BoldFont = *-Regular,BoldItalicFont = *-Italic]{FiraSans}
+\setsansfont[Extension = .otf,Path =
+$font-path$,UprightFont = *-Light,ItalicFont =
+*-LightItalic,BoldFont = *-Regular,BoldItalicFont = *-Italic]{FiraSans}
+\setmathfont[Path = $font-path$,Extension =
+.otf]{FiraMath-Light}
+
+% Environment that does nothing
+\newenvironment{emptyenv}{}{}
+
 % Setup page styles
 \pagestyle{head}
 \header{\includegraphics[height=1.8cm]{$logo$}}{}{\raisebox{.5cm}{\Ovalbox{\parbox{5cm}{\fontspec{Sansation}\centering Examens de maturité\\ Session $session$}}}}
@@ -19,9 +32,6 @@ $endfor$
 
 % Simple solution environment (no box)
 \unframedsolutions
-
-% Environment that does nothing
-\newenvironment{emptyenv}{}{}
 
 % Remove examedoc solution header
 \renewcommand{\solutiontitle}{}

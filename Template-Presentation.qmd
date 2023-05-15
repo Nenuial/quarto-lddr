@@ -7,7 +7,7 @@ execute:
   echo: true
   error: true
   warning: true
-format: lddr_keynote-revealjs
+format: lddr-keynote-revealjs
 ---
 
 # Example

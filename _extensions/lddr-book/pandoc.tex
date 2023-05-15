@@ -23,21 +23,3 @@ $font-path$,UprightFont = *-Light,ItalicFont =
 
 % Environment that does nothing
 \newenvironment{emptyenv}{}{}
-
-\usepackage{fancyhdr}
-\fancyhf{} % clear all header and footer fields
-
-\fancyhead[L]{\includegraphics[width=2cm]{$logo$}}
-\fancyhead[C]{$doc-title$}
-\fancyhead[R]{$doc-class$}
-\fancyfoot[L]{$sign$/\the\year}
-\fancyfoot[C]{}
-\fancyfoot[R]{\thepage/\pageref{LastPage}}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
-\pagestyle{fancy}
-
-$if(line-numbers)$
-% Package for linenumbers, with options to switch the page side
-\usepackage[switch,modulo]{lineno}
-$endif$

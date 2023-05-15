@@ -1,6 +1,6 @@
 title: "LDDR exercise document"
 author: "Pascal Burkhard"
-version: 1.0.2
+version: 1.1.0
 contributes:
   format:
     pdf:
@@ -13,8 +13,6 @@ contributes:
         - after-body.tex
       include-in-header: 
         - header-setup.tex
-      logo: logo_LDDR.pdf
-      logowidth: 2cm
       papersize: a4
       colorlinks: false
       callout-icon: false
@@ -28,23 +26,6 @@ contributes:
         - bottom=2cm
         - headsep=.5cm
         - footskip=1cm
-      mainfont: FiraSans
-      mainfontoptions:
-        - Extension = .otf
-        - Path = /Library/Fonts/
-        - UprightFont = *-Light
-        - ItalicFont = *-LightItalic
-        - BoldFont = *-Regular
-        - BoldItalicFont = *-Italic
-      sansfont: FiraSans
-      sansfontoptions:
-        - Extension = .otf
-        - Path = /Library/Fonts/
-        - UprightFont = *-Light
-        - ItalicFont = *-LightItalic
-        - BoldFont = *-Regular
-        - BoldItalicFont = *-Italic
-      mathfont: FiraMath-Light
-      mathfontoptions:
-        - Path = /Library/Fonts/
-        - Extension = .otf
+      variables:
+        logo: "../lddr-resources/images/logo_LDDR_couleur.pdf"
+        font-path: "../lddr-resources/fonts/"
