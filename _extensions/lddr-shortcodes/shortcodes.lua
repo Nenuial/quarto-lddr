@@ -27,12 +27,36 @@ return {
       local documentTitle = pandoc.utils.stringify(meta["title"])
       local authorName = pandoc.utils.stringify(meta["authors"][1]["name"]["literal"])
 
-      local calloutContent = pandoc.Inlines{"Ce chapitre est un extrait de ", pandoc.Emph(documentTitle), " écrit par ", pandoc.Emph(authorName), "."}
+      local calloutContent = pandoc.Inlines{"Ce chapitre est un extrait de ", pandoc.Emph(documentTitle),
+        " écrit par ", pandoc.Emph(authorName), "."}
       
       local calloutDiv = {}
       calloutDiv["type"] = "note"
       calloutDiv["icon"] = false
       calloutDiv["title"] = "Extrait d'ouvrage"
+      calloutDiv["content"] = pandoc.Blocks{calloutContent}
+      
+      calloutOut = quarto.Callout(calloutDiv)
+      
+      return calloutOut
+    end
+  end,
+  
+  ["doc-web"] = function(args, kwargs, meta)
+    if quarto.doc.isFormat("pdf") then
+      local authorName = pandoc.utils.stringify(meta["authors"][1]["name"]["literal"])
+      local sourceDate = pandoc.utils.stringify(meta["date"])
+      local sourceName = pandoc.utils.stringify(meta["affiliations"][1]["name"])
+      local sourceUrl = pandoc.utils.stringify(meta["affiliations"][1]["url"])
+      
+      local calloutContent = pandoc.Inlines{"Cet article de ", pandoc.Emph(authorName), 
+        " provient de ", pandoc.Emph(pandoc.Link(sourceName, sourceUrl)), " (consulté le ",
+        pandoc.RawInline('latex', '\\DTMdate{'.. sourceDate .. '}'), ")."}
+      
+      local calloutDiv = {}
+      calloutDiv["type"] = "note"
+      calloutDiv["icon"] = false
+      calloutDiv["title"] = "Article internet"
       calloutDiv["content"] = pandoc.Blocks{calloutContent}
       
       calloutOut = quarto.Callout(calloutDiv)
