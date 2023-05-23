@@ -1,6 +1,6 @@
 title: "LDDR exercise document"
 author: "Pascal Burkhard"
-version: 1.1.0
+version: 1.1.1
 contributes:
   format:
     pdf:
@@ -27,5 +27,5 @@ contributes:
         - headsep=.5cm
         - footskip=1cm
       variables:
-        logo: "../lddr-resources/images/logo_LDDR_couleur.pdf"
+        logo: "../lddr-resources/images/logo_LDDR.pdf"
         font-path: "../lddr-resources/fonts/"
