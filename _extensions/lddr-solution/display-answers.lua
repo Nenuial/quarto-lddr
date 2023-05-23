@@ -31,11 +31,16 @@ local function writeSolutions(divEl)
     end
     
     if solutionStatus then
-      divEl.attr.classes:insert('callout-note')
       
-      divEl.content:insert(1, pandoc.Header(2, "Solution"))
+      local calloutDiv = {}
+      calloutDiv["type"] = "note"
+      calloutDiv["icon"] = false
+      calloutDiv["title"] = "Solution"
+      calloutDiv["content"] = divEl.content
       
-      return divEl
+      calloutOut = quarto.Callout(calloutDiv)
+      
+      return calloutOut
     end
   end
   
