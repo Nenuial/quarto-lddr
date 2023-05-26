@@ -15,3 +15,9 @@
 %\boxedpoints
 \usehorizontalhalf
 \addpoints
+
+% Setup solutions with no breaks
+\BeforeBeginEnvironment{solutionorlines}{\par\nopagebreak\minipage{\linewidth}}
+\AfterEndEnvironment{solutionorlines}{\endminipage}
+\BeforeBeginEnvironment{solutionorbox}{\par\nopagebreak\minipage{\linewidth}}
+\AfterEndEnvironment{solutionorbox}{\endminipage}
