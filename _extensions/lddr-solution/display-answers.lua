@@ -1,7 +1,12 @@
 local solutionStatus = false
+local solutionHeader = "Solution"
 local questionNumber = 0
 
 local function readStatus(meta)
+  if meta['solution-header'] then
+    solutionHeader = meta['solution-header']
+  end
+  
   if quarto.doc.isFormat("latex") then
     meta['commands'] = {}
     meta['environments'] = {}
@@ -35,7 +40,7 @@ local function writeSolutions(divEl)
       local calloutDiv = {}
       calloutDiv["type"] = "note"
       calloutDiv["icon"] = false
-      calloutDiv["title"] = "Solution"
+      calloutDiv["title"] = solutionHeader
       calloutDiv["content"] = divEl.content
       
       calloutOut = quarto.Callout(calloutDiv)
