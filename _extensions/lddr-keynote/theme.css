@@ -1,0 +1,13 @@
+#title-slide {
+  text-align: left;
+}
+
+blockquote {
+  color: grey !important;
+  border-left-color: grey !important;
+}
+
+.slide-logo {
+  max-height: 3.5rem !important;
+  z-index: 2;
+}

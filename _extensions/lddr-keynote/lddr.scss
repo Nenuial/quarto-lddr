@@ -1,0 +1,389 @@
+/*-- scss:defaults --*/
+
+$presentation-font-size-root: 28px !important;
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400&display=swap');
+
+$font-family-sans-serif: 'Fira Sans', sans-serif !default;
+
+$border-leftright-width: 80px;
+$border-updown-width: 40px;
+
+$font-family-sans-serif: "Fira Sans", serif !default;
+$body-color: #426a6a !default;
+$link-color: #3647a3 !default;
+$headings-font-weight: 400 !default;
+$presentation-font-size-root: 35px !default;
+$presentation-heading-color: #4c6c77 !default;
+$presentation-h1-font-size: 2em;
+$presentation-h2-font-size: 1.4em;
+$presentation-h3-font-size: 0.95em;
+$input-panel-bg: rgba(233, 236, 239, 0.2) !default;
+
+// Custom colours and variables
+$jet: #4c6c77;
+$accent: #3647a3;
+$accent2: #53a198;
+$right-arrow: "\2192"; // Unicode character for right arrow
+
+/*-- scss:rules --*/
+
+$slide-width: calc(var(--slide-width) + #{$border-leftright-width} * 2);
+$slide-height: calc(var(--slide-height) + #{$border-updown-width} * 2);
+
+@mixin full-screen {
+  position: absolute;
+  top: -$border-updown-width;
+  right: -$border-leftright-width;
+  height: $slide-height !important;
+  width: $slide-width !important;
+  max-height: $slide-height !important;
+  max-width: $slide-width !important;
+  margin: 0 !important;
+  z-index: -1;
+}
+
+.quarto-light {
+  background-color: #D8D8D3;
+}
+
+.quarto-dark {
+  background-color: #D8D8D3;
+}
+
+html.print-pdf .quarto-light {
+  background-color: $body-bg;
+}
+
+html.print-pdf .quarto-dark {
+  background-color: $body-bg;
+}
+
+html.print-pdf .slides {
+  border-left: 0px;
+  border-top: 0px;
+}
+
+.slides {
+  background-color: $body-bg;
+  border-style: solid;
+  border-color: $body-bg;
+  box-shadow: #222222 0px 0px 30px 0px;
+
+  border-left-width: 60px;
+  border-right-width: 60px;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+}
+
+.image-left {
+  @include full-screen;
+  left: -$border-leftright-width;
+  width: $slide-width / 2 !important;
+  max-width: $slide-width / 2 !important;
+}
+
+.image-right {
+  @include full-screen;
+  right: -$border-leftright-width;
+  width: $slide-width / 2 !important;
+  max-width: $slide-width / 2 !important;
+}
+
+.background-color-div {
+  @include full-screen;
+}
+
+.background-image-div {
+  @include full-screen;
+}
+
+.background-video-div {
+  @include full-screen;
+  max-width: none !important;
+  max-height: none !important;
+  -o-object-fit: cover;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.background-iframe-div {
+  @include full-screen;
+  max-width: none !important;
+  max-height: none !important;
+  -o-object-fit: cover;
+  object-fit: cover;
+  z-index: -1 !important;
+}
+
+.reveal .slide-menu-button {
+  left: 8px - $border-leftright-width / 2 !important;
+  bottom: 8px - $border-updown-width / 2 !important;
+  pointer-events: auto;
+}
+
+.reveal .progress {
+  z-index: 100;
+  bottom: - $border-updown-width;
+  width: $slide-width !important;
+  left: -$border-leftright-width;
+}
+
+
+
+
+
+.footer {
+  color: $body-color !important;
+}
+
+.slide-logo {
+    right: 0px !important;
+    max-height: 1.5rem !important;
+    height: 50px !important;
+    width: auto;
+    z-index: 2;
+}
+
+.slide-number {
+    z-index: 2;
+}
+
+.slide h1,
+.slide h2 {
+  border-bottom: 2px solid $link-color;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.no-title h1,
+.no-title h2 {
+  display: none !important;
+}
+
+.slide ol {
+  margin-left: 50px!important;
+}
+
+/* From clean */
+
+.reveal a {
+  line-height: 1.5em;
+}
+
+.reveal p {
+  font-weight: 300;
+  margin-top: 1.25em;
+}
+
+// title and headings
+
+#title-slide {
+  text-align: left;
+
+  .title {
+    color: $body-color;
+    font-size: 1.4em;
+    font-weight: 650;
+    line-height: 0;
+  }
+
+  .subtitle {
+    color: $accent;
+    font-style: italic;
+  }
+
+  .institute,
+  .quarto-title-affiliation,
+  .quarto-title-author-email {
+    font-style: italic;
+    // font-size: 80%;
+    // color: #7F7F7F;
+  }
+
+  .author,
+  .quarto-title-author-name {
+    color: $body-color;
+  }
+
+  .quarto-title-authors {
+    display: flex;
+    justify-content: left;
+
+    .quarto-title-author {
+      padding-left: 0em;
+      padding-right: 0em;
+      width: 100%;
+    }
+  }
+
+}
+
+
+.reveal h2 {
+  font-weight: 450;
+}
+
+.reveal h3 {
+  color: $accent;
+  font-style: italic;
+  font-weight: 350;
+}
+
+.reveal h4 {
+  color: $accent2;
+  font-weight: 350;
+  margin-top: 1.25em;
+}
+
+// alerts etc.
+
+.alert {
+  color: $accent2;
+}
+
+.fg {
+  color: var(--col, $jet);
+}
+
+.bg {
+  background-color: var(--col, #fff);
+  padding: 0.1em;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+// lists
+
+// Unordered lists
+
+.reveal ul {
+  font-weight: 300;
+  padding-left: 16px;
+  list-style-type: square;
+
+  li::marker {
+    color: mix($accent, white, 70%);
+  }
+}
+
+.reveal ul ul {
+  list-style: none;
+
+  li:before {
+    content: $right-arrow;
+    color: mix($accent, white, 60%);
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -2em;
+    margin-right: 0.5em;
+  }
+}
+
+.reveal ul ul ul {
+  list-style: none;
+
+  li:before {
+    content: $right-arrow;
+    color: mix($accent, white, 60%);
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -2em;
+    margin-right: 0.5em;
+  }
+}
+
+// Ordered lists
+
+.reveal ol {
+  font-weight: 300;
+  padding-left: 16px;
+
+  li::marker {
+    color: $accent;
+  }
+}
+
+// Move "hamburger" menu button to top right
+
+.reveal .slide-menu-button {
+  position: fixed;
+  top: 6px;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.reveal .slide-menu-button > * {
+  pointer-events: auto;
+}
+
+
+// Same for chalkboard buttons (with an offset)
+
+.reveal .slide-chalkboard-buttons {
+  position: fixed;
+  top: 12px;
+  right: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.reveal .slide-chalkboard-buttons > * {
+  pointer-events: auto;
+}
+
+// Beamer-style button link environment
+
+.button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: $accent;
+  border: 1px solid $accent;
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.button::before {
+  content: "▶";
+  margin-right: 5px;
+}
+
+// Special catch for etable environment to ensure these table images
+// don't overflow the slide.
+// See: https://lrberge.github.io/fixest/articles/etable_new_features.html
+
+.etable {
+  width: 100%;
+  height: calc(100% - 3em); /* Adjust 3em based on the height of your header, if necessary */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.etable img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
