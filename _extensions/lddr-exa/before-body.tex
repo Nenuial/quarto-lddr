@@ -1,3 +1,27 @@
+$if(cover-sheet)$
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay, anchor = west]
+ \node[anchor=north west] (logo)
+   at ([xshift=2cm,yshift=-2cm]current page.north west) {
+     \includegraphics[width=3cm]{$logo$}
+    };
+
+ \node[anchor=north,text width=10cm,align=center] (title)
+   at ([yshift=-6cm]current page.north) {
+     \Huge\bfseries $title$\\[.5cm]
+     \Large\bfseries\emph{$date$}
+    };
+ \node[anchor=north west,text width=18cm,align=left] (infos)
+   at ([xshift=2cm,yshift=-6cm]current page.west) {
+     \Large\bfseries Enseignant:\tabto{5cm}$author$\\
+     \Large\bfseries Élève:\tabto{5cm}$student-name$ ($student-class$)\\
+     \Large\bfseries Matériel autorisé:\tabto{5cm}$student-equipment$\\
+     \Large\bfseries Durée de l'épreuve:\tabto{5cm}$test-length$\\
+    };
+\end{tikzpicture}
+\clearpage
+$endif$
+
 $if(title)$
 \begin{center}
 \textsc{\textbf{\Huge $title$}} \\

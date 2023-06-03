@@ -16,6 +16,7 @@ contributes:
       colorlinks: false
       callout-icon: false
       lang: fr-CH
+      date-format: long
       geometry:
         - bindingoffset=0in
         - headheight=35pt

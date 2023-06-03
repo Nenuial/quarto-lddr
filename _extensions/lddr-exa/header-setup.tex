@@ -7,6 +7,23 @@
 % Package for \uline{}
 \usepackage[normalem]{ulem}
 
+% Package for tabto
+\usepackage{tabto}
+
+% Package for DateTime
+\usepackage[useregional,calc]{datetime2}
+
+\usepackage[calc,useregional]{datetime2}
+\DTMsetup{datesep=}
+
+\DTMnewstyle{yymmdd}{%
+\renewcommand*\DTMdisplaydate[4]{%
+\DTMtwodigits{##1}\DTMtwodigits{##2}\DTMtwodigits{##3}% 
+}
+\renewcommand*{\DTMDisplaydate}{\DTMdisplaydate}%
+}
+{}{}{}
+
 % Setup examdoc points
 \pointsinleftmargin
 \pointpoints{pt}{pts}
