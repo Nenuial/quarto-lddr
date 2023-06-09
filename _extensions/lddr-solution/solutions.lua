@@ -30,7 +30,7 @@ local function readStatus(meta)
 end
 
 local function writeSolutions(divEl)
-  if divEl.attr.classes:includes('answer') then
+  if divEl.attr.classes:includes('answer') or divEl.attr.classes:includes('code') then
     if quarto.doc.isFormat("html") and not solutionStatus then
       return {}
     end
@@ -49,7 +49,19 @@ local function writeSolutions(divEl)
     end
   end
   
-  return divEl
+  return nil
+end
+
+local function displaySolutions(divEl)
+  if divEl.attr.classes:includes('key-only') and not solutionStatus then
+    return {}
+  end
+
+  if divEl.attr.classes:includes('student-only') and solutionStatus then
+    return {}
+  end
+  
+  return nil
 end
 
 local function writeQuestions(paraEl)
@@ -74,5 +86,6 @@ end
 return {
   {Meta = readStatus},
   {Div = writeSolutions},
+  {Div = displaySolutions},
   {Para = writeQuestions}
 }

@@ -8,8 +8,9 @@ filters:
   - latex-environment
 format:
   html: default
-  lddr-exs-pdf: 
-    keep-tex: true
+  lddr-exs-pdf: default
+  lddr-exs-pdf+solution:
+    solutions: true
 ---
 	
 []{.q} Question 1
@@ -26,4 +27,12 @@ Réponse 1 avec des lignes
 
 Réponse 2 avec une boite
 
+:::
+
+:::key-only
+Ce texte s'affiche que sur la solution.
+:::
+
+:::student-only
+Ce texte s'affiche que chez les élèves.
 :::
