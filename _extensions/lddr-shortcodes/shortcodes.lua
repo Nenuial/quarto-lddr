@@ -63,5 +63,17 @@ return {
       
       return calloutOut
     end
+  end,
+  
+  ["pdf-link"] = function(args, kwargs, meta)
+    if quarto.doc.isFormat("html") then
+      local link = string.match(PANDOC_STATE['output_file'], "(.*).html")
+      
+      quarto.utils.dump(link)
+      
+      local button = pandoc.RawInline('html', '<button type="button" class="btn btn-primary"><i class="bi bi-file-pdf"></i> <em>' .. pandoc.utils.stringify(meta["title"]) .. '</em></button>')
+      local dwnlink = pandoc.Link(button, link .. '.pdf')
+      return pandoc.Blocks{pandoc.Para(pandoc.Emph("Ce document est uniquement disponible au format PDF.")), pandoc.Para(dwnlink)}
+    end
   end
 }
