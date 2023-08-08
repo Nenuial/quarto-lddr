@@ -38,7 +38,6 @@ local function writeSolutions(divEl)
     if solutionStatus then
       
       local calloutDiv = {}
-      calloutDiv["type"] = "note"
       calloutDiv["icon"] = false
       calloutDiv["title"] = solutionHeader
       calloutDiv["content"] = divEl.content
