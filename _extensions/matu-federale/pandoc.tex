@@ -11,6 +11,16 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+% Font setup
+\setmainfont[Extension = .otf,Path =
+$font-path$,UprightFont = *-Light,ItalicFont =
+*-LightItalic,BoldFont = *-Regular,BoldItalicFont = *-Italic]{FiraSans}
+\setsansfont[Extension = .otf,Path =
+$font-path$,UprightFont = *-Light,ItalicFont =
+*-LightItalic,BoldFont = *-Regular,BoldItalicFont = *-Italic]{FiraSans}
+\setmathfont[Path = $font-path$,Extension =
+.otf]{FiraMath-Light}
+
 % Simple solution environment (no box)
 \unframedsolutions
 

@@ -1,6 +1,6 @@
 title: "Maturité fédérale"
 author: "Pascal Burkhard"
-version: 1.0.0
+version: 1.1.0
 contributes:
   format:
     pdf:
@@ -23,23 +23,6 @@ contributes:
         - bottom=2cm
         - headsep=0cm
         - footskip=.5cm
-      mainfont: FiraSans
-      mainfontoptions:
-        - Extension = .otf
-        - Path = /Library/Fonts/
-        - UprightFont = *-Light
-        - ItalicFont = *-LightItalic
-        - BoldFont = *-Regular
-        - BoldItalicFont = *-Italic
-      sansfont: FiraSans
-      sansfontoptions:
-        - Extension = .otf
-        - Path = /Library/Fonts/
-        - UprightFont = *-Light
-        - ItalicFont = *-LightItalic
-        - BoldFont = *-Regular
-        - BoldItalicFont = *-Italic
-      mathfont: FiraMath-Light
-      mathfontoptions:
-        - Path = /Library/Fonts/
-        - Extension = .otf
+      variables:
+        logo: "../lddr-resources/images/logo_LDDR.pdf"
+        font-path: "../lddr-resources/fonts/"
