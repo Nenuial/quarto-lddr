@@ -12,6 +12,7 @@ return {
       
       local calloutDiv = {}
       calloutDiv["type"] = "note"
+      calloutDiv["attr"] = ""
       calloutDiv["icon"] = false
       calloutDiv["title"] = "Article de presse"
       calloutDiv["content"] = pandoc.Blocks{calloutContent}
@@ -32,6 +33,7 @@ return {
       
       local calloutDiv = {}
       calloutDiv["type"] = "note"
+      calloutDiv["attr"] = ""
       calloutDiv["icon"] = false
       calloutDiv["title"] = "Extrait d'ouvrage"
       calloutDiv["content"] = pandoc.Blocks{calloutContent}
@@ -55,6 +57,7 @@ return {
       
       local calloutDiv = {}
       calloutDiv["type"] = "note"
+      calloutDiv["attr"] = ""
       calloutDiv["icon"] = false
       calloutDiv["title"] = "Article internet"
       calloutDiv["content"] = pandoc.Blocks{calloutContent}
