@@ -20,6 +20,8 @@ return {
       calloutOut = quarto.Callout(calloutDiv)
       
       return calloutOut
+    else
+      return ""
     end
   end,
   
@@ -41,6 +43,8 @@ return {
       calloutOut = quarto.Callout(calloutDiv)
       
       return calloutOut
+    else
+      return ""
     end
   end,
   
@@ -65,6 +69,8 @@ return {
       calloutOut = quarto.Callout(calloutDiv)
       
       return calloutOut
+    else
+      return ""
     end
   end,
   
@@ -77,6 +83,8 @@ return {
       local button = pandoc.RawInline('html', '<button type="button" class="btn btn-primary"><i class="bi bi-file-pdf"></i> <em>' .. pandoc.utils.stringify(meta["title"]) .. '</em></button>')
       local dwnlink = pandoc.Link(button, link .. '.pdf')
       return pandoc.Blocks{pandoc.Para(pandoc.Emph("Ce document est uniquement disponible au format PDF.")), pandoc.Para(dwnlink)}
+    else
+      return ""
     end
   end
 }
