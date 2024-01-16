@@ -22,6 +22,17 @@
 % Package for \uline{}
 \usepackage[normalem]{ulem}
 
+% Package for nice line breaks in code
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\
+\RecustomVerbatimEnvironment{verbatim}{Verbatim}{
+  showspaces = false,
+  showtabs = false,
+  breaksymbolleft={},
+  breaklines
+  % Note: setting commandchars=\\\{\} here will cause an error 
+}
+
 % Package for quotes
 \usepackage{csquotes}
     \MakeOuterQuote{"}
