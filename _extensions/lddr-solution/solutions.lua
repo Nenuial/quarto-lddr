@@ -12,8 +12,10 @@ local function readStatus(meta)
     meta['environments'] = {}
     
     meta['commands']['q'] = 'question'
+    meta['commands']['fw'] = 'fullwidth'
     meta['environments']['answer'] = 'solutionorlines'
     meta['environments']['code'] = 'solutionorbox'
+    meta['environments']['fwe'] = 'EnvFullwidth'
   end
   
   if meta['solutions'] then
