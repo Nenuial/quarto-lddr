@@ -13,6 +13,8 @@ local function readStatus(meta)
     
     meta['commands']['q'] = 'question'
     meta['commands']['fw'] = 'fullwidth'
+    meta['commands']['save'] = 'savenumber'
+    meta['commands']['restore'] = 'restorenumber'
     meta['environments']['center'] = 'center'
     meta['environments']['questions'] = 'questions'
     meta['environments']['answer'] = 'solutionorlines'

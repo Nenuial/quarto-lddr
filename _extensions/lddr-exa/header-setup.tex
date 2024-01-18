@@ -40,3 +40,7 @@
 \AfterEndEnvironment{solutionorbox}{\endminipage}
 \BeforeBeginEnvironment{tcolorbox}{\par\nopagebreak\minipage{\linewidth}}
 \AfterEndEnvironment{tcolorbox}{\endminipage}
+
+% Setup commands to resume question numbering
+\newcommand{\savenumber}{\xdef\mycounter{\arabic{question}}}
+\newcommand{\restorenumber}{\setcounter{question}{\mycounter}}
