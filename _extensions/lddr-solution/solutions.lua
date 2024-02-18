@@ -88,9 +88,23 @@ local function writeQuestions(paraEl)
   return paraEl
 end
 
+local function codeSolutions(divEl)
+  if divEl.attr.classes:includes('cell') and divEl.attr.attributes then
+    if divEl.attr.attributes['tags'] == 'solution' then
+      if solutionStatus then
+        return nil
+      else
+        divEl.content = {}
+        return divEl
+      end
+    end
+  end
+end
+
 return {
   {Meta = readStatus},
   {Div = writeSolutions},
   {Div = displaySolutions},
+  {Div = codeSolutions},
   {Para = writeQuestions}
 }
