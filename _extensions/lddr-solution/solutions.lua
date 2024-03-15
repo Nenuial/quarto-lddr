@@ -26,6 +26,9 @@ local function readStatus(meta)
     solutionStatus = true
     
     if quarto.doc.isFormat("latex") then
+      if not meta['classoption'] then
+        meta['classoption'] = pandoc.List:new()
+      end
       meta['classoption']:insert(pandoc.Str('answers'))
     end
     
