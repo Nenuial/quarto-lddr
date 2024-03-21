@@ -27,3 +27,10 @@ contributes:
       variables:
         logo: "../lddr-resources/images/logo_LDDR.pdf"
         font-path: "../lddr-resources/fonts/"
+    typst:
+      font-paths: "../lddr-resources/fonts/"
+      template-partials:
+        - typst-template.typ
+        - typst-show.typ
+      variables:
+        logo: "../lddr-resources/images/logo_LDDR.svg"
