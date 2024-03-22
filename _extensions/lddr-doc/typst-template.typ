@@ -18,7 +18,7 @@
   set page(
     paper: paper,
     margin: margin,
-    numbering: "(1/1)"
+    numbering: "1/1"
   )
   set par(justify: true)
   show par: set block(spacing: 1.5em)
@@ -31,11 +31,13 @@
            region: region,
            font: font,
            size: fontsize)
-           
+  
   show: chic.with(
     chic-footer(
       left-side: [#sign/#datetime.today().display("[year]")],
-      right-side: chic-page-number()
+      right-side: [#chic-page-number()/#locate(loc => {
+        counter(page).final(loc).last()
+      })]
     ),
     chic-header(
       left-side: image(logo, width: 2cm),
