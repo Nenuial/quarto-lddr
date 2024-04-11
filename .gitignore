@@ -6,3 +6,7 @@
 /.quarto/
 
 swiss.lco
+/*.pdf
+/*.html
+/*.tex
+/*_files

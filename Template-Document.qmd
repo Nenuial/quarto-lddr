@@ -17,7 +17,7 @@ $$ x + 3 \times \frac{12}{14}$$
 
 {{< pagebreak >}}
 
-:::callout-note
+:::{.callout-note title="This is a note"}
 Nulla magna pariatur deserunt sit minim laborum excepteur incididunt pariatur pariatur reprehenderit ullamco reprehenderit excepteur magna. Tempor reprehenderit enim minim commodo ipsum aliqua id ipsum esse ipsum laborum. Ad non aliqua veniam aliquip fugiat ut. Anim deserunt tempor Lorem eu. Commodo Lorem reprehenderit nostrud sit exercitation est culpa nostrud eu ipsum sunt anim sunt labore commodo. Et nisi nostrud exercitation aliquip pariatur fugiat dolor nulla eiusmod fugiat sint.
 :::
 

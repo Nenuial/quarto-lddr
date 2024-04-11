@@ -35,9 +35,7 @@
   show: chic.with(
     chic-footer(
       left-side: [#sign/#datetime.today().display("[year]")],
-      right-side: [#chic-page-number()/#locate(loc => {
-        counter(page).final(loc).last()
-      })]
+      right-side: [#chic-page-number()/#context(counter(page).final().last())]
     ),
     chic-header(
       left-side: image(logo, width: 2cm),
