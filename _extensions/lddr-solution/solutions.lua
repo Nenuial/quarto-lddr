@@ -17,6 +17,7 @@ local function readStatus(meta)
     meta['commands']['restore'] = 'restorenumber'
     meta['environments']['center'] = 'center'
     meta['environments']['questions'] = 'questions'
+    meta['environments']['parts'] = 'parts'
     meta['environments']['answer'] = 'solutionorlines'
     meta['environments']['code'] = 'solutionorbox'
     meta['environments']['fwe'] = 'EnvFullwidth'
