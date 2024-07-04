@@ -23,3 +23,9 @@ $font-path$,UprightFont = *-Light,ItalicFont =
 
 % Environment that does nothing
 \newenvironment{emptyenv}{}{}
+
+% Setup chapter images
+$if(chapter-image)$
+\usechapterimagetrue
+\chapterimage{$chapter-image$}
+$endif$
