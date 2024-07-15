@@ -1,0 +1,10 @@
+div.object-box {
+  background-color: #f3f5f7;
+  border: 1px solid #0F2D61;
+  margin-bottom: 16px;
+  padding: 4px;
+}
+
+div.object-box img {
+  width: 100%;
+}
