@@ -1,6 +1,6 @@
 title: "LDDR book"
 author: "Pascal Burkhard"
-version: 1.2.2
+version: 1.3.0
 contributes:
   format:
     html:
