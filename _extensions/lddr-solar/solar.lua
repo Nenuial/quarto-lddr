@@ -57,6 +57,7 @@ return {
 
     if quarto.format.is_latex_output() then
       template = templates["tex"]
+      view_model["image_path"] = "_extensions/nenuial/lddr-solar/assets/pictures/"
 
       quarto.doc.use_latex_package("tabularx")
       quarto.doc.use_latex_package("multirow")
@@ -64,6 +65,7 @@ return {
       out_type = "latex"
     else
       template = templates["html"]
+      view_model["image_path"] = "../../_extensions/nenuial/lddr-solar/assets/pictures/"
 
       quarto.doc.add_html_dependency({
         name = "solar_style",
@@ -72,8 +74,6 @@ return {
       })
       out_type = "html"
     end
-
-    view_model["image_path"] = "_extensions/nenuial/lddr-solar/assets/pictures/"
 
     if args[2] == "en" then
       view_model["name"] = view_model["english"]
@@ -86,8 +86,6 @@ return {
     end
 
     output = lustache:render(template, view_model)
-
-    quarto.log.output(output)
 
     return pandoc.RawBlock(out_type, output)
   end
