@@ -65,7 +65,7 @@ return {
       out_type = "latex"
     else
       template = templates["html"]
-      view_model["image_path"] = "../../_extensions/nenuial/lddr-solar/assets/pictures/"
+      view_model["image_path"] = "_extensions/nenuial/lddr-solar/assets/pictures/"
 
       quarto.doc.add_html_dependency({
         name = "solar_style",
