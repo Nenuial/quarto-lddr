@@ -1,15 +1,15 @@
 local lustache = require 'assets/lua/lustache'
 local solar_system = {
-  { english = "Sun",     french = "Soleil",  type_en = "G2V star",        type_fr = "Étoile G2V",        distance = {},    mass = 1989e27,   radius = 695508, density = 1.41, rotation = "25.4 - 35 d", revolution = {} },
-  { english = "Mercury", french = "Mercure", type_en = "Telluric planet", type_fr = "Planète tellurique", distance = 0.387, mass = 3.302e+23, radius = 2440,  density = 5.43, rotation = "56.646 d",  revolution = 0.2408 },
-  { english = "Venus",   french = "Venus",   type_en = "Telluric planet", type_fr = "Planète tellurique", distance = 0.723, mass = 4.869e+24, radius = 6052,  density = 5.24, rotation = "243.018 d", revolution = 0.6152 },
-  { english = "Earth",   french = "Terre",   type_en = "Telluric planet", type_fr = "Planète tellurique", distance = 1.0,   mass = 5.974e+24, radius = 6378,  density = 5.52, rotation = "23.934 h",  revolution = 1.0 },
-  { english = "Mars",    french = "Mars",    type_en = "Telluric planet", type_fr = "Planète tellurique", distance = 1.524, mass = 6.419e+23, radius = 3397,  density = 3.94, rotation = "24.623 h",  revolution = 1.8808 },
-  { english = "Jupiter", french = "Jupiter", type_en = "Gaseous planet",  type_fr = "Planète gazeuse",    distance = 5.203, mass = 1.899e+27, radius = 71492, density = 1.33, rotation = "9.925 h",   revolution = 11.862 },
-  { english = "Saturn",  french = "Saturne", type_en = "Gaseous planet",  type_fr = "Planète gazeuse",    distance = 9.537, mass = 5.685e+26, radius = 60268, density = 0.7,  rotation = "10.656 h",  revolution = 29.457 },
-  { english = "Uranus",  french = "Uranus",  type_en = "Gaseous planet",  type_fr = "Planète gazeuse",    distance = 19.19, mass = 8.662e+25, radius = 25559, density = 1.3,  rotation = "17.24 h",   revolution = 84.018 },
-  { english = "Neptune", french = "Neptune", type_en = "Gaseous planet",  type_fr = "Planète gazeuse",    distance = 30.07, mass = 1.028e+26, radius = 24764, density = 1.76, rotation = "16.11 h",   revolution = 164.78 },
-  { english = "Pluto",   french = "Pluton",  type_en = "Dwarf planet",    type_fr = "Planète naine",      distance = 39.48, mass = 1.314e+22, radius = 1151,  density = 2.0,  rotation = "6.387 d",   revolution = 248.4 },
+  Sun = { english = "Sun",     french = "Soleil",  type_en = "G2V star",        type_fr = "Étoile G2V",        distance = {},    mass = 1989e27,   radius = 695508, density = 1.41, rotation = "25.4 - 35 d", revolution = {} },
+  Mercury = { english = "Mercury", french = "Mercure", type_en = "Telluric planet", type_fr = "Planète tellurique", distance = 0.387, mass = 3.302e+23, radius = 2440, density = 5.43, rotation = "56.646 d", revolution = 0.2408 },
+  Venus = { english = "Venus", french = "Venus", type_en = "Telluric planet", type_fr = "Planète tellurique", distance = 0.723, mass = 4.869e+24, radius = 6052, density = 5.24, rotation = "243.018 d", revolution = 0.6152 },
+  Earth = { english = "Earth", french = "Terre", type_en = "Telluric planet", type_fr = "Planète tellurique", distance = 1.0, mass = 5.974e+24, radius = 6378, density = 5.52, rotation = "23.934 h", revolution = 1.0 },
+  Mars = { english = "Mars", french = "Mars", type_en = "Telluric planet", type_fr = "Planète tellurique", distance = 1.524, mass = 6.419e+23, radius = 3397, density = 3.94, rotation = "24.623 h", revolution = 1.8808 },
+  Jupiter = { english = "Jupiter", french = "Jupiter", type_en = "Gaseous planet", type_fr = "Planète gazeuse", distance = 5.203, mass = 1.899e+27, radius = 71492, density = 1.33, rotation = "9.925 h", revolution = 11.862 },
+  Saturn = { english = "Saturn", french = "Saturne", type_en = "Gaseous planet", type_fr = "Planète gazeuse", distance = 9.537, mass = 5.685e+26, radius = 60268, density = 0.7, rotation = "10.656 h", revolution = 29.457 },
+  Uranus = { english = "Uranus", french = "Uranus", type_en = "Gaseous planet", type_fr = "Planète gazeuse", distance = 19.19, mass = 8.662e+25, radius = 25559, density = 1.3, rotation = "17.24 h", revolution = 84.018 },
+  Neptune = { english = "Neptune", french = "Neptune", type_en = "Gaseous planet", type_fr = "Planète gazeuse", distance = 30.07, mass = 1.028e+26, radius = 24764, density = 1.76, rotation = "16.11 h", revolution = 164.78 },
+  Pluto = { english = "Pluto", french = "Pluton", type_en = "Dwarf planet", type_fr = "Planète naine", distance = 39.48, mass = 1.314e+22, radius = 1151, density = 2.0, rotation = "6.387 d", revolution = 248.4 },
 }
 
 
