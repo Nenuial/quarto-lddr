@@ -12,6 +12,7 @@ local solar_system = {
   Pluto = { english = "Pluto", french = "Pluton", type_en = "Dwarf planet", type_fr = "Planète naine", distance = 39.48, mass = 1.314e+22, radius = 1151, density = 2.0, rotation = "6.387 d", revolution = 248.4 },
 }
 
+local templates = require("assets/templates/templates")
 
 local english_strings = {
   distance        = "Distance to Sun",
@@ -50,11 +51,19 @@ return {
   ["solar-data"] = function(args, kwargs, meta)
     local object = pandoc.utils.stringify(args[1])
 
-    local template_file = ""
+    local template = ""
     local out_type = ""
+    local view_model = solar_system[object]
 
-    if quarto.format.is_html_output() then
-      template_file = "_extensions/nenuial/lddr-solar/assets/templates/solar.html"
+    if quarto.format.is_latex_output() then
+      template = templates["tex"]
+
+      quarto.doc.use_latex_package("tabularx")
+      quarto.doc.use_latex_package("multirow")
+      quarto.doc.include_file("in-header", "assets/tex/include.tex")
+      out_type = "latex"
+    else
+      template = templates["html"]
 
       quarto.doc.add_html_dependency({
         name = "solar_style",
@@ -62,19 +71,7 @@ return {
         stylesheets = { "assets/css/style.css" }
       })
       out_type = "html"
-    elseif quarto.format.is_latex_output() then
-      template_file = "_extensions/nenuial/lddr-solar/assets/templates/solar.tex"
-
-      quarto.doc.use_latex_package("tabularx")
-      quarto.doc.use_latex_package("multirow")
-      quarto.doc.include_file("in-header", "assets/tex/include.tex")
-      out_type = "latex"
-    else
-      return nil
     end
-
-    local template, err = readFile(template_file)
-    local view_model = solar_system[object]
 
     view_model["image_path"] = "_extensions/nenuial/lddr-solar/assets/pictures/"
 
@@ -89,6 +86,8 @@ return {
     end
 
     output = lustache:render(template, view_model)
+
+    quarto.log.output(output)
 
     return pandoc.RawBlock(out_type, output)
   end

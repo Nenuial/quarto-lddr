@@ -1,3 +1,6 @@
+local templates = {}
+
+templates["html"] = [[
 <div class='grid object-box'>
   <div class='g-col-3'>
     <img src='{{ image_path }}{{ english }}.png'></img>
@@ -40,3 +43,25 @@
     {{/revolution}}
   </div>
 </div>
+]]
+
+templates["tex"] = [[
+\begin{planet}
+	\begin{tabularx}{\linewidth}{p{3cm} >{\bfseries}p{4cm} X}
+		\multirow{4}{\linewidth}{\includegraphics[width=2.8cm]{ {{{ image_path }}}{{ english }}}} & \multicolumn{2}{X}{\bfseries\Large {{ name }} }\\
+		& Type: & {{ type }}\\
+    {{#distance}}
+    & {{ translation.distance }} & {{ distance }} {{ translation.distance_unit }}\\
+    {{/distance}}
+		& {{ translation.mass }} & {{ mass }} kg\\
+		& {{ translation.radius }} & {{ radius }} km\\
+		& {{ translation.density }} & {{ density }} g/cm\textsuperscript{3}\\
+		& {{ translation.rotation }} & {{ rotation }}\\
+    {{#revolution}}
+    & {{ translation.revolution }} & {{ revolution }} {{ translation.revolution_unit }}\\
+    {{/revolution}}
+	\end{tabularx}
+\end{planet}
+]]
+
+return templates
