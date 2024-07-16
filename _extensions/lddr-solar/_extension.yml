@@ -1,6 +1,6 @@
 title: "LDDR Solar"
 author: "Pascal Burkhard"
-version: 0.2.1
+version: 0.2.2
 contributes:
   shortcodes:
     - solar.lua
