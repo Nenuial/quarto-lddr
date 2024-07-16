@@ -54,7 +54,7 @@ return {
     local out_type = ""
 
     if quarto.format.is_html_output() then
-      template_file = "_extensions/lddr-solar/assets/templates/solar.html"
+      template_file = "_extensions/nenuial/lddr-solar/assets/templates/solar.html"
 
       quarto.doc.add_html_dependency({
         name = "solar_style",
@@ -63,7 +63,7 @@ return {
       })
       out_type = "html"
     elseif quarto.format.is_latex_output() then
-      template_file = "_extensions/lddr-solar/assets/templates/solar.tex"
+      template_file = "_extensions/nenuial/lddr-solar/assets/templates/solar.tex"
 
       quarto.doc.use_latex_package("tabularx")
       quarto.doc.use_latex_package("multirow")
@@ -76,7 +76,7 @@ return {
     local template, err = readFile(template_file)
     local view_model = solar_system[object]
 
-    view_model["image_path"] = "_extensions/lddr-solar/assets/pictures/"
+    view_model["image_path"] = "_extensions/nenuial/lddr-solar/assets/pictures/"
 
     if args[2] == "en" then
       view_model["name"] = view_model["english"]
