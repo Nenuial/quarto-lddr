@@ -90,8 +90,6 @@ return {
 
     output = lustache:render(template, view_model)
 
-    quarto.log.output(output)
-
     return pandoc.RawBlock(out_type, output)
   end
 }
