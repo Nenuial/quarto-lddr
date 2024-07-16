@@ -3,7 +3,7 @@ local function convert_to_empty(value)
   return value == '' and {} or value
 end
 local solar = {}
-for line in io.lines("_extensions/lddr-solar/assets/data/solar.csv") do
+for line in io.lines("_extensions/nenuial/lddr-solar/assets/data/solar.csv") do
   local english, french, type_en, type_fr, distance, mass, radius, density, rotation, revolution = line:match(
     "%s*(.-),%s*(.-),%s*(.-),%s*(.-),%s*(.-),%s*(.-),%s*(.-),%s*(.-),%s*(.-),%s*(.-)")
   if english and english ~= "" then
