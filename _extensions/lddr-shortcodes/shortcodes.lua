@@ -26,10 +26,10 @@ return {
   
   ["doc-book"] = function(args, kwargs, meta)
     if quarto.doc.isFormat("pdf") then
-      local documentTitle = pandoc.utils.stringify(meta["title"])
+      local bookTitle = pandoc.utils.stringify(meta["book"])
       local authorName = pandoc.utils.stringify(meta["authors"][1]["name"]["literal"])
 
-      local calloutContent = pandoc.Inlines{"Ce chapitre est un extrait de ", pandoc.Emph(documentTitle),
+      local calloutContent = pandoc.Inlines { "Ce chapitre est un extrait de ", pandoc.Emph(bookTitle),
         " écrit par ", pandoc.Emph(authorName), "."}
       
       local calloutDiv = {}
