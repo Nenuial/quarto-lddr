@@ -1,6 +1,6 @@
 title: "Maturité fédérale"
 author: "Pascal Burkhard"
-version: 1.1.0
+version: 1.1.1
 contributes:
   format:
     pdf:
@@ -10,7 +10,6 @@ contributes:
         - pandoc.tex
       include-in-header: 
         - header-setup.tex
-      logo: logo_ch.png
       papersize: a4
       colorlinks: false
       callout-icon: false
@@ -24,5 +23,5 @@ contributes:
         - headsep=0cm
         - footskip=.5cm
       variables:
-        logo: "../lddr-resources/images/logo_LDDR.pdf"
+        logo: "logo_ch.png"
         font-path: "../lddr-resources/fonts/"
