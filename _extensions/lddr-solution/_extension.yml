@@ -1,6 +1,6 @@
 title: "Display answers"
 author: "Pascal Burkhard"
-version: 1.4.1
+version: 1.4.2
 contributes:
   filters:
     - solutions.lua

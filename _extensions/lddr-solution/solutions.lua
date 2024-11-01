@@ -99,7 +99,8 @@ local function codeSolutions(divEl)
       if solutionStatus then
         return nil
       else
-        divEl.content = {}
+        divEl.attr.attributes['tags'] = ''
+        divEl.content = " "
         return divEl
       end
     end
