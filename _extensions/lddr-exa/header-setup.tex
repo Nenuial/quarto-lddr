@@ -13,6 +13,10 @@
 % Package for DateTime
 \usepackage[useregional,calc]{datetime2}
 
+% Package for language conditionals
+\usepackage{iflang}
+\newcommand{\trad}[2]{\IfLanguageName{english}{#1}{#2}}
+
 \usepackage[calc,useregional]{datetime2}
 \DTMsetup{datesep=}
 

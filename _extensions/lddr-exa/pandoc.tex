@@ -25,7 +25,7 @@ $font-path$,UprightFont = *-Light,ItalicFont =
 \newenvironment{emptyenv}{}{}
 
 % Setup header and footer
-\header{\includegraphics[width=2cm]{$logo$}}{$doc-title$}{$if(cover-sheet)$$else$Nom:$if(student-name)$ $student-name$$else$\hspace{4cm}$endif$$endif$}
+\header{\includegraphics[width=2cm]{$logo$}}{$doc-title$}{$if(cover-sheet)$$else$\trad{Name}{Nom}:$if(student-name)$ $student-name$$else$\hspace{4cm}$endif$$endif$}
 \headrule
 \footer{$sign$/\the\year}{}{\thepage/\pageref{LastPage}}
 \footrule
