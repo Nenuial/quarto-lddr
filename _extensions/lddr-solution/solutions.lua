@@ -50,6 +50,7 @@ local function writeSolutions(divEl)
       
       local calloutDiv = {}
       calloutDiv["icon"] = false
+      calloutDiv["type"] = ""
       calloutDiv["title"] = solutionHeader
       calloutDiv["content"] = divEl.content
       
