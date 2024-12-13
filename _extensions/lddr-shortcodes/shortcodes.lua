@@ -89,7 +89,7 @@ return {
       local calloutDiv = {}
       calloutDiv["type"] = "note"
       calloutDiv["icon"] = false
-      calloutDiv["title"] = pandoc.RawInline("latex", "\\trad{Internet article}{Article internet}")
+      calloutDiv["title"] = translate({en = "Internet article", fr = "Article internet"}, lang)
       calloutDiv["content"] = pandoc.Blocks{calloutContent}
       
       calloutOut = quarto.Callout(calloutDiv)
