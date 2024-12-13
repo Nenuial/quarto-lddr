@@ -77,7 +77,7 @@ return {
       local sourceUrl = pandoc.utils.stringify(meta["affiliations"][1]["url"])
       
       local calloutContent = pandoc.Inlines{
-        translate({en = "This article from ", fr = "Cet article de "}, lang),
+        translate({en = "This article by ", fr = "Cet article de "}, lang),
         pandoc.Emph(authorName), 
         translate({en = " is from ", fr = " provient de "}, lang),
         pandoc.Emph(pandoc.Link(sourceName, sourceUrl)),
