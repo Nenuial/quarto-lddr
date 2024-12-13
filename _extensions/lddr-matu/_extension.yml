@@ -1,6 +1,6 @@
-title: "LDDR maturity exam"
+title: "LDDR Maturity exam"
 author: "Pascal Burkhard"
-version: 1.1.1
+version: 1.1.2
 contributes:
   format:
     pdf:
@@ -34,7 +34,6 @@ contributes:
       papersize: a4
       colorlinks: false
       callout-icon: false
-      lang: fr-CH
       geometry:
         - bindingoffset=0in
         - headheight=35pt

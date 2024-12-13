@@ -1,14 +1,12 @@
 title: LDDR Keynote
 author: Pascal Burkhard
-version: 1.1.0
+version: 1.1.1
 contributes:
   formats:
     revealjs:
       slide-number: true
       menu: false
       progress: false
-      date-format: long
-      lang: fr-CH
       theme: [default, lddr.scss]
       include-after-body: theme.html
       css: theme.css

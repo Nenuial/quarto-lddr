@@ -1,11 +1,10 @@
-title: "LDDR exercise document"
+title: "LDDR Exercise document"
 author: "Pascal Burkhard"
-version: 1.2.2
+version: 1.2.3
 contributes:
   format:
     pdf:
       documentclass: exam
-      classoption: [french]
       template-partials:
         - title.tex
         - pandoc.tex
@@ -16,7 +15,6 @@ contributes:
       papersize: a4
       colorlinks: false
       callout-icon: false
-      lang: fr-CH
       geometry:
         - bindingoffset=0in
         - headheight=35pt

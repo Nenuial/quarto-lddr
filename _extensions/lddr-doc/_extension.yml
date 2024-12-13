@@ -1,6 +1,6 @@
-title: "LDDR default document"
+title: "LDDR Default document"
 author: "Pascal Burkhard"
-version: 1.3.1
+version: 1.3.2
 contributes:
   format:
     pdf:
@@ -13,8 +13,6 @@ contributes:
         - header-setup.tex
       papersize: a4
       colorlinks: false
-      lang: fr-CH
-      classoption: [french]
       geometry:
         - bindingoffset=0in
         - headheight=35pt

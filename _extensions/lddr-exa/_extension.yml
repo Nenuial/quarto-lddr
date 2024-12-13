@@ -1,6 +1,6 @@
-title: "LDDR exam document"
+title: "LDDR Exam document"
 author: "Pascal Burkhard"
-version: 1.4.0
+version: 1.4.1
 contributes:
   format:
     pdf:
@@ -15,8 +15,6 @@ contributes:
       papersize: a4
       colorlinks: false
       callout-icon: false
-      lang: fr-CH
-      date-format: long
       geometry:
         - bindingoffset=0in
         - headheight=35pt
