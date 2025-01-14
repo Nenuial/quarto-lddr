@@ -1,6 +1,6 @@
 title: "LDDR Exam document"
 author: "Pascal Burkhard"
-version: 1.4.1
+version: 1.4.2
 contributes:
   format:
     pdf:
