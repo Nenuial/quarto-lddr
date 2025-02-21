@@ -1,6 +1,6 @@
 title: "LDDR Exam document"
 author: "Pascal Burkhard"
-version: 1.4.2
+version: 1.4.3
 contributes:
   format:
     pdf:
@@ -27,3 +27,4 @@ contributes:
       variables:
         logo: "../lddr-resources/images/logo_LDDR.pdf"
         font-path: "../lddr-resources/fonts/"
+source: nenuial/quarto-lddr

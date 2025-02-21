@@ -1,6 +1,6 @@
 title: "Maturité fédérale"
 author: "Pascal Burkhard"
-version: 1.1.1
+version: 1.1.2
 contributes:
   format:
     pdf:
@@ -25,3 +25,4 @@ contributes:
       variables:
         logo: "logo_ch.png"
         font-path: "../lddr-resources/fonts/"
+source: nenuial/quarto-lddr

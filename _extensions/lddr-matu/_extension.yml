@@ -1,6 +1,6 @@
 title: "LDDR Maturity exam"
 author: "Pascal Burkhard"
-version: 1.1.2
+version: 1.1.3
 contributes:
   format:
     pdf:
@@ -46,3 +46,4 @@ contributes:
       variables:
         logo: "../lddr-resources/images/logo_LDDR_couleur.pdf"
         font-path: "../lddr-resources/fonts/"
+source: nenuial/quarto-lddr

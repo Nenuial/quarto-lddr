@@ -1,6 +1,6 @@
 title: LDDR Keynote
 author: Pascal Burkhard
-version: 1.1.1
+version: 1.1.2
 contributes:
   formats:
     revealjs:
@@ -12,3 +12,4 @@ contributes:
       css: theme.css
       logo: ../lddr-resources/images/logo_LDDR_couleur.png
       footer: ""
+source: nenuial/quarto-lddr
