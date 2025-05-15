@@ -1,6 +1,6 @@
 title: "LDDR Default document"
 author: "Pascal Burkhard"
-version: 1.3.3
+version: 1.3.4
 contributes:
   format:
     pdf:
