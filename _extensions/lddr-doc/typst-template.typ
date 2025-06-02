@@ -1,4 +1,4 @@
-#import "@preview/chic-hdr:0.4.0": *
+#import "@preview/chic-hdr:0.5.0": *
 
 #let document(
   title: none,
