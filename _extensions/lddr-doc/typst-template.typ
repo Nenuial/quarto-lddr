@@ -20,8 +20,7 @@
     margin: margin,
     numbering: "1/1"
   )
-  set par(justify: true)
-  show par: set block(spacing: 1.5em)
+  set par(justify: true, spacing: 1.5em)
   show math.equation: set text(weight: 100, font: mathfont)
   show raw: set text(font: codefont)
   show strong: set text(weight: 100)
