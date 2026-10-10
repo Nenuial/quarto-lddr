@@ -1,7 +1,9 @@
 title: "Display answers"
 author: "Pascal Burkhard"
-version: 1.4.4
+version: 1.5.0
 contributes:
   filters:
     - solutions.lua
+    - path: exercises-typst.lua
+      at: post-quarto
 source: nenuial/quarto-lddr
