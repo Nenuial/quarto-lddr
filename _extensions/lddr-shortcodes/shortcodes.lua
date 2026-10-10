@@ -10,9 +10,14 @@ local translate = function(dict, lang)
   return dict[lang]
 end
 
+-- Printable formats (LaTeX and Typst PDF)
+local isPrint = function()
+  return quarto.doc.isFormat("pdf") or quarto.doc.isFormat("typst")
+end
+
 return {
   ["doc-press"] = function(args, kwargs, meta)
-    if quarto.doc.isFormat("pdf") then
+    if isPrint() then
       local lang = getLang(meta)
       local authorName = pandoc.utils.stringify(meta["authors"][1]["name"]["literal"])
       local sourceDate = pandoc.utils.stringify(meta["date"])
@@ -43,7 +48,7 @@ return {
   end,
   
   ["doc-book"] = function(args, kwargs, meta)
-    if quarto.doc.isFormat("pdf") then
+    if isPrint() then
       local lang = getLang(meta)
       local bookTitle = pandoc.utils.stringify(meta["book"])
       local authorName = pandoc.utils.stringify(meta["authors"][1]["name"]["literal"])
@@ -69,7 +74,7 @@ return {
   end,
   
   ["doc-web"] = function(args, kwargs, meta)
-    if quarto.doc.isFormat("pdf") then
+    if isPrint() then
       local lang = getLang(meta)
       local authorName = pandoc.utils.stringify(meta["authors"][1]["name"]["literal"])
       local sourceDate = pandoc.utils.stringify(meta["date"])

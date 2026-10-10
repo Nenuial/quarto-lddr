@@ -21,6 +21,7 @@
     numbering: "1/1"
   )
   set par(justify: true, spacing: 1.5em)
+  show table: set par(justify: false)
   show math.equation: set text(weight: 100, font: mathfont)
   show raw: set text(font: codefont)
   show strong: set text(weight: 100)

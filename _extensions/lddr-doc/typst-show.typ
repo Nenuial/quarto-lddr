@@ -8,6 +8,12 @@ $endif$
 $if(sign)$
   sign: [$sign$],
 $endif$
+$if(lang)$
+  lang: "$lang$",
+$endif$
+$if(region)$
+  region: "$region$",
+$endif$
 $if(logo)$
   logo: "$logo$",
 $endif$
