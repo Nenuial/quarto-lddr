@@ -47,6 +47,28 @@ local function readFile(filePath)
   return content
 end
 
+-- Typst: the same box as the LaTeX version (grey box, picture on the left, data on the right)
+local function typst_box(vm)
+  local function s(x) return '"' .. tostring(x):gsub('\\', '\\\\'):gsub('"', '\\"') .. '"' end
+  local t = vm["translation"]
+  local rows = { { "Type:", s(vm["type"]) } }
+  if type(vm["distance"]) == "number" then table.insert(rows, { t.distance, s(vm["distance"] .. " " .. t.distance_unit) }) end
+  table.insert(rows, { t.mass, s(vm["mass"] .. " kg") })
+  table.insert(rows, { t.radius, s(vm["radius"] .. " km") })
+  table.insert(rows, { t.density, "[" .. vm["density"] .. " g/cm#super[3]]" })
+  table.insert(rows, { t.rotation, s(vm["rotation"]) })
+  if type(vm["revolution"]) == "number" then table.insert(rows, { t.revolution, s(vm["revolution"] .. " " .. t.revolution_unit) }) end
+  local cells = {}
+  for _, r in ipairs(rows) do
+    table.insert(cells, "text(weight: \"regular\", " .. s(r[1]) .. "), " .. r[2])
+  end
+  return "#block(width: 100%, breakable: false, stroke: 1pt + black, fill: luma(95%), inset: 5pt, above: 1.2em, below: 1.2em,\n" ..
+    "  grid(columns: (3cm, 4cm, 1fr), row-gutter: 0.5em, align: (left + horizon, left, left),\n" ..
+    "    grid.cell(rowspan: " .. (#rows + 1) .. ", image(" .. s("/" .. vm["image_path"] .. vm["english"] .. ".png") .. ", width: 2.8cm)),\n" ..
+    "    grid.cell(colspan: 2, text(size: 1.3em, weight: \"regular\", " .. s(vm["name"]) .. ")),\n" ..
+    "    " .. table.concat(cells, ",\n    ") .. ",\n  ))"
+end
+
 return {
   ["solar-data"] = function(args, kwargs, meta)
     local object = pandoc.utils.stringify(args[1])
@@ -55,7 +77,10 @@ return {
     local out_type = ""
     local view_model = solar_system[object]
 
-    if quarto.format.is_latex_output() then
+    if quarto.doc.is_format("typst") then
+      view_model["image_path"] = "_extensions/nenuial/lddr-solar/assets/pictures/"
+      out_type = "typst"
+    elseif quarto.format.is_latex_output() then
       template = templates["tex"]
       view_model["image_path"] = "_extensions/nenuial/lddr-solar/assets/pictures/"
 
@@ -85,7 +110,11 @@ return {
       view_model["translation"] = french_strings
     end
 
-    output = lustache:render(template, view_model)
+    if out_type == "typst" then
+      output = typst_box(view_model)
+    else
+      output = lustache:render(template, view_model)
+    end
 
     return pandoc.RawBlock(out_type, output)
   end
