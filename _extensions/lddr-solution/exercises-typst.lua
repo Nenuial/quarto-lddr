@@ -131,7 +131,10 @@ local function exerciseDiv(div)
 
   if div.classes:includes('questions') then
     local blocks = layoutItems(div.content, 'q', 'lddr-question')
-    blocks:insert(1, raw('#lddr-questions-start()'))
+    -- .continue: keep numbering from the previous questions block
+    if not div.classes:includes('continue') then
+      blocks:insert(1, raw('#lddr-questions-start()'))
+    end
     return blocks
   end
 

@@ -6,6 +6,8 @@
   sign: none,
   margin: (left: 1.5cm, right: 1.5cm),
   paper: "a4",
+  flipped: false,
+  links-as-notes: false,
   lang: "fr",
   region: "CH",
   font: "Fira Sans",
@@ -13,14 +15,21 @@
   codefont: "Fira Code",
   fontsize: 10pt,
   logo: none,
+  header-right: none,
   doc,
 ) = {
   set page(
     paper: paper,
+    flipped: flipped,
     margin: margin,
     numbering: "1/1"
   )
   set par(justify: true, spacing: 1.5em)
+  // links-as-notes: URL of external links as footnotes (print); not for
+  // image links (e.g. the licence/AI icons in the header)
+  show link: it => if links-as-notes and type(it.dest) == str and it.body.func() != image and not (it.body.has("text") and it.body.text == it.dest) {
+    it + footnote(it.dest)
+  } else { it }
   show table: set par(justify: false)
   show math.equation: set text(weight: 100, font: mathfont)
   show raw: set text(font: codefont)
@@ -39,6 +48,8 @@
     ),
     chic-header(
       left-side: image(logo, width: 2cm),
+      // header-right (e.g. licence/AI icons): first page only
+      right-side: if header-right != none { context if counter(page).get().first() == 1 { header-right } },
     ),
     chic-separator(.5pt),
     chic-offset(7pt),
