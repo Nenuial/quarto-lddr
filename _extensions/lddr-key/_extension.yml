@@ -11,6 +11,7 @@ contributes:
       logo: "images/lddr.svg"
       filters:
         - keynote/custom-callouts.lua
+        - keynote/badges.lua
       revealjs-plugins:
         - keynote/codewindow
       width: 1280
