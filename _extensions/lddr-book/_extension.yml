@@ -1,10 +1,7 @@
 title: "LDDR book"
 author: "Pascal Burkhard"
-version: 1.4.0
+version: 1.5.0
 contributes:
-  # {{< badge-icon cc-by-nc-sa >}}, {{< badge-icon mmm-handyman >}}: the icons of the licence and the AI labels
-  shortcodes:
-    - badges/shortcodes.lua
   format:
     html:
       # both themes, light first: with only "dark", Quarto >= 1.9 starts in dark mode
@@ -15,9 +12,9 @@ contributes:
       css: style.css
       mainfont: "Fira Sans"
       toc: true
-      # licence and AI label of each chapter (metadata cc, ai; see badges/badges-core.lua)
+      # licence and AI label of each chapter (metadata cc, ai; see lddr-badges/badges-book.lua)
       filters:
-        - path: badges/badges-html.lua
+        - path: badges-html.lua
           at: pre-quarto
     pdf:
       documentclass: book
@@ -47,7 +44,7 @@ contributes:
       filters:
         - path: lddr-book.lua
           at: post-quarto
-        - path: badges/badges-typst.lua
+        - path: badges-typst.lua
           at: post-quarto
       variables:
         logo: "_extensions/nenuial/lddr-resources/images/logo_LDDR_couleur.pdf"

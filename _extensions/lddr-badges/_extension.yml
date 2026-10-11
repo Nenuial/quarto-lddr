@@ -1,0 +1,14 @@
+title: "LDDR badges"
+author: "Pascal Burkhard"
+version: 1.0.0
+quarto-required: ">=1.9.0"
+contributes:
+  # Documents: `filters: [lddr-badges]` (licence and AI icons, see badges-doc.lua).
+  # Books: used by lddr-book (badges-book.lua).
+  filters:
+    - path: badges-doc.lua
+      at: pre-quarto
+  # {{< badge-icon cc-by-nc-sa >}}, {{< badge-icon mmm-handyman >}}
+  shortcodes:
+    - shortcodes.lua
+source: nenuial/quarto-lddr
