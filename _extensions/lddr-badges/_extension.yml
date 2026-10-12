@@ -1,6 +1,6 @@
 title: "LDDR badges"
 author: "Pascal Burkhard"
-version: 1.0.0
+version: 1.0.1
 quarto-required: ">=1.9.0"
 contributes:
   # Documents: `filters: [lddr-badges]` (licence and AI icons, see badges-doc.lua).

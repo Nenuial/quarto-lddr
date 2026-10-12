@@ -97,7 +97,9 @@ local function Pandoc(doc)
   end
 
   if quarto.doc.is_format("html") then
-    local html = { '<div class="lddr-badges" style="display: flex; gap: 0.5rem; margin: -0.5rem 0 1.5rem;">' }
+    -- no negative top margin: on narrow screens the description of the title
+    -- block wraps and would cover the icons
+    local html = { '<div class="lddr-badges" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0 1.5rem;">' }
     for _, item in ipairs(items) do
       table.insert(html, core.htmlIcon(item.icon, pagePath .. item.anchor, item.text, math.floor(item.height * 40)))
     end
