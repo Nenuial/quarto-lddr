@@ -60,8 +60,10 @@ local function badge(name)
     local input = quarto.doc.input_file or ""
     local offset = quarto.project.offset or "."
     local href = offset .. "/" .. (input:match("%.fr%.qmd$") and "index.fr.html" or "index.html") .. "#sec-ai"
+    -- positive top margin: it collapses with the bottom margin of the title block
+    -- on wide screens, and keeps the icon off the title on narrow ones (no margin)
     return pandoc.RawBlock("html",
-      '<div class="lddr-badges" style="display: flex; align-items: center; gap: 0.6rem; margin: -0.25rem 0 1.5rem;">'
+      '<div class="lddr-badges" style="display: flex; align-items: center; gap: 0.6rem; margin: 0.75rem 0 1.5rem;">'
       .. core.htmlIcon("mmm-" .. name, href, label, 34)
       .. '<a href="' .. href .. '" style="font-size: 0.85rem; color: var(--bs-secondary-color, #6c757d); text-decoration: none;">'
       .. label .. "</a></div>")
