@@ -92,13 +92,14 @@
 )
 
 // Sticky: a question or part never ends a page apart from what follows it
-// (its answer space, or its solution in the key)
-#let lddr-question(body) = block(sticky: true, {
+// (its answer space, or its solution in the key). The filter turns it off
+// when a page break follows, which would otherwise move the question too.
+#let lddr-question(sticky: true, body) = block(sticky: sticky, {
   lddr-question-counter.step()
   lddr-item(context lddr-question-counter.display("1."), body)
 })
 
-#let lddr-part(body) = block(sticky: true, {
+#let lddr-part(sticky: true, body) = block(sticky: sticky, {
   lddr-part-counter.step()
   lddr-item(context lddr-part-counter.display("(a)"), body)
 })

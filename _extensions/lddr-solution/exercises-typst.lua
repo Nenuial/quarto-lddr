@@ -89,11 +89,14 @@ local function layoutItems(blocks, marker, item)
     end
   end
 
-  for _, block in ipairs(blocks) do
+  for i, block in ipairs(blocks) do
     if hasLeadingSpan(block, marker) then
       flush()
       inItem = true
-      out:insert(raw('#' .. item .. '['))
+      -- Items stick to what follows them, except to a page break
+      local nextBlock = blocks[i + 1]
+      local options = (nextBlock ~= nil and isPageBreak(nextBlock)) and '(sticky: false)' or ''
+      out:insert(raw('#' .. item .. options .. '['))
       out:insert(stripLeadingSpan(block))
       out:insert(raw(']'))
     elseif block.t == 'Div' and block.classes:includes('fwe') then
