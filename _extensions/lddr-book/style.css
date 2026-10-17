@@ -5,3 +5,8 @@
   margin-top: 0px !important;
   margin-left: 36px !important;
 }
+/* Cross-reference previews (hover on a link to a chapter): Quarto shows the first element after the
+   title, which is the AI label of the chapter; hide it there, the preview then shows the text */
+.tippy-content .lddr-badges {
+  display: none !important;
+}
