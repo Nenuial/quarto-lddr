@@ -1,7 +1,10 @@
 -- lddr-book.lua: Typst output of the LDDR book
 --   * book parts and appendices -> orange-book's #part[] and appendices (from Quarto's orange-book.lua)
 --   * \index{sort@Display!sub|see{other}} -> lddr-index-mark(), listed by lddr-make-index()
---   * \chapterimage{path} -> update-heading-image(): picture at the top of the next chapter
+--   * # Title {head-image="pictures/x/1__head"} -> update-heading-image() just before the chapter's
+--     heading: the picture at the top of the chapter, set in the chapter itself
+--   * \chapterimage{path} -> update-heading-image(): picture at the top of the next chapter (the LaTeX
+--     way, still supported)
 --   * \noindent, \vspace{}: dropped (LaTeX layout only)
 --   * 10^-12^ -> 10^−12^: a true minus, so that the font's superscripts are used (no "-" in them)
 -- The sources keep their LaTeX commands, so that the LaTeX version still works.
@@ -106,6 +109,8 @@ local header_filter = {
     local file = quarto.doc.file_metadata().file
     local bookItemType = file.bookItemType
     if el.level ~= 1 or bookItemType == nil then return nil end
+    local head = el.attributes["head-image"]
+    el.attributes["head-image"] = nil
 
     if bookItemType == "part" then
       return pandoc.RawBlock("typst", "#part[" .. pandoc.utils.stringify(el.content) .. "]")
@@ -124,7 +129,9 @@ local header_filter = {
         return { start, el }
       end
     end
-    return nil
+    -- the heading reads the picture where it stands: set it just before
+    if head then return { pandoc.RawBlock("typst", chapter_image(head)), el } end
+    return el
   end,
 }
 
