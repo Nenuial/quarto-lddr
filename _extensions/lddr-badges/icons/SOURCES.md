@@ -9,3 +9,5 @@
   Levels: manmade (made without GenAI), handyman (assisted by GenAI),
   cyborg (made together with GenAI), piggybacker (mostly made by GenAI),
   lazyprompter (made by GenAI).
+- The `mmm-*.svg` viewBox is widened from `0 0 128 128` to `-2 -2 132 132`: the drawings reach the
+  edge of the original box (up to 0.3 beyond), which clipped their outer outline in print.
