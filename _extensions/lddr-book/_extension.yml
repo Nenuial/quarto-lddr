@@ -1,6 +1,6 @@
 title: "LDDR book"
 author: "Pascal Burkhard"
-version: 1.6.0
+version: 1.7.0
 contributes:
   format:
     html:
@@ -15,6 +15,9 @@ contributes:
       # licence and AI label of each chapter (metadata cc, ai; see lddr-badges/badges-book.lua)
       filters:
         - path: badges-html.lua
+          at: pre-quarto
+        # French typography when lang is fr (non-breaking spaces before ; : ! ? », units…)
+        - path: french-spaces.lua
           at: pre-quarto
     pdf:
       documentclass: book
@@ -42,6 +45,8 @@ contributes:
         - page.typ
         - numbering.typ
       filters:
+        - path: french-spaces.lua
+          at: pre-quarto
         - path: lddr-book.lua
           at: post-quarto
         - path: badges-typst.lua

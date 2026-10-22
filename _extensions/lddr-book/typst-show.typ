@@ -28,6 +28,13 @@
 
 // The bibliography goes in the References chapter, which has the heading
 #set bibliography(title: none)
+// French typography in the bibliography, which Typst writes after the filters (french-spaces.lua does
+// the text): no line break before ; : ! ? » or after «
+#show bibliography: it => if lddr-fr {
+  show regex("\\s[;:!?»]"): m => "\u{a0}" + m.text.trim()
+  show regex("«\\s"): "«\u{a0}"
+  it
+} else { it }
 
 // Definitions and examples: redefined with the LDDR look (Quarto's default has an italic body)
 #import "@preview/theorion:0.4.1": make-frame
