@@ -5,6 +5,7 @@
 --   « and » with no space are given one  «texte» -> « texte »
 --   before % ‰ and the units after a number (15 %, 9 289 km, 20 °C, 26 millions, 1 200 CHF)
 --   between the groups of digits of a number (1 568 032, 1:25 000)
+-- In every other language, only a number keeps its % or ‰ (51.6 %), as in the GeoResources figures.
 -- Only spaces of the text change: code, maths, raw HTML/Typst and links' targets are left alone. A colon
 -- with no space (12:30, 1:25 000) stays as it is.
 -- Same rules as the keynote's french-spaces.lua (quarto-keynote). The bibliography is written after every
@@ -77,6 +78,18 @@ local function fix_inlines(inl)
   return inl
 end
 
+-- other languages: a number and its % or ‰
+local function fix_percent(inl)
+  for i = 2, #inl - 1 do
+    local prev, nxt = inl[i - 1], inl[i + 1]
+    if is_space(inl[i]) and prev.t == "Str" and is_number(prev.text) and nxt.t == "Str"
+      and (starts(nxt.text, "%") or starts(nxt.text, "‰")) then
+      inl[i] = pandoc.Str(NB)
+    end
+  end
+  return inl
+end
+
 -- the bibliography of the web pages (citeproc runs after the filters): the same spaces, in the browser
 local REFS_SCRIPT = [[
 <script>
@@ -94,7 +107,7 @@ document.querySelectorAll(".csl-entry").forEach(function (entry) {
 return {
   {
     Pandoc = function(doc)
-      if not french(doc.meta) then return nil end
+      if not french(doc.meta) then return doc:walk({ Inlines = fix_percent }) end
       if quarto.doc.is_format("html") then quarto.doc.include_text("after-body", REFS_SCRIPT) end
       return doc:walk({ Inlines = fix_inlines })
     end,

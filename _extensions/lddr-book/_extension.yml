@@ -1,6 +1,6 @@
 title: "LDDR book"
 author: "Pascal Burkhard"
-version: 1.7.0
+version: 1.7.1
 contributes:
   format:
     html:
@@ -16,7 +16,7 @@ contributes:
       filters:
         - path: badges-html.lua
           at: pre-quarto
-        # French typography when lang is fr (non-breaking spaces before ; : ! ? », units…)
+        # French typography when lang is fr (non-breaking spaces before ; : ! ? », units…); 51.6 % in all languages
         - path: french-spaces.lua
           at: pre-quarto
     pdf:
