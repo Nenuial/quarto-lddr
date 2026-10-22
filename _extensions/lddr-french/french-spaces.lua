@@ -64,9 +64,29 @@ local function french(meta)
   return l:sub(1, 2):lower() == "fr"
 end
 
+-- a space at the end of bold, italic… before the punctuation that follows it: **santé **; -> santé ;
+local function before_mark(el)
+  if not (el and el.t == "Str") then return false end
+  for _, p in ipairs(BEFORE) do if starts(el.text, p) then return true end end
+  return false
+end
+
+local function trailing_space(el)
+  local c = el.content
+  if type(c) ~= "table" or #c == 0 then return nil end
+  local last = c[#c]
+  if is_space(last) then return el, #c end
+  if type(last.content) == "table" then return trailing_space(last) end
+  return nil
+end
+
 local function fix_inlines(inl)
   for i = 1, #inl do
     local el = inl[i]
+    if el.t ~= "Str" and not is_space(el) and before_mark(inl[i + 1]) then
+      local owner, k = trailing_space(el)
+      if owner then owner.content[k] = pandoc.Str(NB) end
+    end
     if is_space(el) and nb_space(inl[i - 1], inl[i + 1]) then
       inl[i] = pandoc.Str(NB)
     elseif el.t == "Str" then
